@@ -1,5 +1,4 @@
 import { useTheme } from "@/components/theme/theme-provider";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function ActionCard({ title, description, icon, href }) {
@@ -7,16 +6,18 @@ export default function ActionCard({ title, description, icon, href }) {
   return (
     <Link
       href={href}
-      className={`w-full group border-b-[4px] border-white hover:border-accent hover:bg-accent-50 bg-[var(--background-color)] ${theme.styles.shadowMd} flex flex-col items-center py-10 lg:py-16  px-5 lg:px-10 text-center rounded-[10px]`}
+      className={`group flex w-full flex-col items-center rounded-[26px] bg-white px-6 py-10 text-center transition hover:-translate-y-1 hover:border-[var(--brand-green)] lg:px-10 lg:py-12 ${theme.styles.shadowMd}`}
     >
       {icon && (
-        <span className="mb-4 text-accent text-[52px] font-normal">{icon}</span>
+        <span className="mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-[var(--surface-muted)] text-[44px] text-[var(--accent)] transition group-hover:bg-[var(--accent-light)] group-hover:text-[var(--brand-green)]">
+          {icon}
+        </span>
       )}
 
-      <h2 className="font-bold text-black mb-[14px] text-[20px] lg:text-[25px] uppercase group-hover:text-accent">
+      <h2 className="mb-[14px] font-montserrat text-[18px] font-black uppercase tracking-[0.16em] text-[var(--dark)] group-hover:text-[var(--accent)] lg:text-[22px]">
         {title}
       </h2>
-      <div className="tracking-[0.05em] text-[var(--gray-dark)] text-[16px] leading-[19px]">
+      <div className="max-w-[24ch] text-[15px] leading-6 text-[var(--gray-dark)]">
         {description}
       </div>
     </Link>

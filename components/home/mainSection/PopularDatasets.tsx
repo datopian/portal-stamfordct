@@ -4,40 +4,39 @@ import { Dataset } from "@/schemas/dataset.interface";
 
 type DatasetLinkProps = Pick<Dataset, "title" | "metadata_modified">;
 
-//  Name is "PopularDatasets" but content is "Recent Datasets" - Parametrize this
+// Name is "PopularDatasets" but content is "Recent Datasets" - Parametrize this
 export default function PopularDatasets({
   datasets,
 }: {
   datasets: Array<Dataset>;
 }) {
   const { theme } = useTheme();
+
   return (
     <div
-      className={`bg-white text-black p-8 rounded-lg  h-full ${theme.styles.shadowSm}`}
+      className={`h-full rounded-[28px] bg-white p-8 text-black ${theme.styles.shadowSm}`}
     >
-      <div>
-        <div
-          className={`inline-block align-middle w-12 h-0.5 border border-accent`}
-        />
-        <span className="inline-block font-roboto text-sm text-center pl-2">
-          &nbsp; MOST POPULAR DATASETS
-        </span>
-        <h1 className="font-inter font-black text-4xl mt-6">Highlights</h1>
-        <div className="flex flex-col">
-          {datasets.map((dataset, index) => (
-            <Link
-              key={index}
-              href={`/@${dataset.organization.name}/${dataset.name}`}
-              className="block mt-6 hover:text-accent transition-all"
-            >
-              <DatasetLink
-                key={dataset.id}
-                title={dataset.title}
-                metadata_modified={dataset.metadata_modified}
-              />
-            </Link>
-          ))}
-        </div>
+      <div className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.28em] text-[var(--gray-dark)]">
+        <div className="h-px w-10 bg-[var(--brand-green)]" />
+        Most Popular Datasets
+      </div>
+      <h1 className="mt-6 font-montserrat text-4xl font-black text-[var(--dark)]">
+        Highlights
+      </h1>
+      <div className="mt-2 flex flex-col">
+        {datasets.map((dataset, index) => (
+          <Link
+            key={index}
+            href={`/@${dataset.organization.name}/${dataset.name}`}
+            className="mt-5 block rounded-2xl border border-transparent px-1 py-2 transition hover:border-[var(--surface-border)] hover:bg-[var(--accent-light)] hover:text-[var(--accent)]"
+          >
+            <DatasetLink
+              key={dataset.id}
+              title={dataset.title}
+              metadata_modified={dataset.metadata_modified}
+            />
+          </Link>
+        ))}
       </div>
     </div>
   );
@@ -46,15 +45,17 @@ export default function PopularDatasets({
 function DatasetLink({ title, metadata_modified }: DatasetLinkProps) {
   return (
     <div>
-      <h2 className="font-inter font-semibold text-xl">{title}</h2>
-      <span className="font-roboto font-light text-[12px] flex items-center gap-1 text-[#1F2633]">
+      <h2 className="font-montserrat text-xl font-bold text-[var(--dark)]">
+        {title}
+      </h2>
+      <span className="mt-2 flex items-center gap-1 text-[12px] font-medium uppercase tracking-[0.08em] text-[var(--gray-dark)]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-3 h-3"
+          className="h-3 w-3"
         >
           <path
             strokeLinecap="round"

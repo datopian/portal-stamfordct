@@ -22,7 +22,7 @@ const SearchForm: React.FC = () => {
   return (
     <form
       onSubmit={(e) => handleSubmit(e)}
-      className="items-center flex flex-row gap-4"
+      className="flex flex-col gap-3 sm:flex-row sm:items-center"
     >
       <input
         id="search-form-input"
@@ -33,11 +33,11 @@ const SearchForm: React.FC = () => {
         }}
         placeholder="Search datasets..."
         aria-label="Search datasets"
-        className={`w-3/4  rounded-[10px] border-1 bg-white  py-3 px-4 md:py-4 md:px-4 border leading-none placeholder-gray-500 ${styles.shadowMd}`}
+        className={`min-h-[58px] w-full rounded-full border border-[var(--surface-border)] bg-white px-5 py-4 leading-none text-[var(--dark)] placeholder:text-[var(--gray)] focus:border-[var(--brand-green)] focus:outline-none ${styles.shadowMd}`}
       />
       <button
         type="submit"
-        className={`text-lg border-b-[4px] border-accent rounded-[10px] ${styles.bgDark}  uppercase font-medium px-3 py-3 md:px-10 md:py-4 leading-none lg:mt-0 ${styles.textLight} `}
+        className={`inline-flex min-h-[58px] items-center justify-center rounded-full px-6 py-3 text-[13px] font-bold uppercase tracking-[0.22em] md:px-8 ${styles.bgDark} ${styles.textLight}`}
       >
         <MagnifyingGlassIcon width={24} className="sm:hidden" />
         <span className="hidden sm:block">Search</span>

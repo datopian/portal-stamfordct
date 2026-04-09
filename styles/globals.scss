@@ -1,15 +1,15 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --light-gray: #f7fafc;
-  --light-gray-2: #eaeaea;
-  --mid-blue: #0070f3;
-  --accent: hsl(182, 100%, 38%);
+  --light-gray: #f8fafc;
+  --light-gray-2: #d7dee8;
+  --mid-blue: #253b63;
+  --accent: #253b63;
+  --brand-green: #7db640;
   --indicator-size: 3px;
-  --text-active-color: black;
+  --text-active-color: #172744;
   --queryless-drawer-width: 560px;
 }
 
@@ -26,13 +26,45 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f6 100%);
+  color: #1f365b;
+  font-family:
+    var(--font-inter),
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    sans-serif;
   scroll-padding-top: 10vh;
 }
 
+body {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-montserrat), var(--font-inter), sans-serif;
+  letter-spacing: 0.01em;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(125, 182, 64, 0.2);
+  color: #172744;
+}
+
 .custom-container {
-  width: min(1200px, 90%);
+  width: min(1240px, 92%);
   margin: 0 auto;
 }
 
@@ -41,7 +73,7 @@ body {
 }
 
 .tag-checkbox:checked + label {
-  background-color: #00bbc2;
+  background-color: var(--brand-green);
   color: white;
   transition: 0.1s;
 }
@@ -109,13 +141,13 @@ snap-tabs {
   @apply font-bold underline text-blue-500;
 }
 
-.react-datepicker__month{
+.react-datepicker__month {
   @apply mx-auto flex items-center justify-center rounded-full;
 }
 
 .react-datepicker__month,
-.react-datepicker__month-text{
-  margin:0!important;
+.react-datepicker__month-text {
+  margin: 0 !important;
 }
 
 #app-shell {

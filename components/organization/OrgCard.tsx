@@ -20,7 +20,7 @@ export default function GroupCard({
   return (
     <Link
       href={`/@${name}`}
-      className="border-b-[4px] p-8 border-white  bg-white hover:bg-accent-50 group block border-b-[4px] hover:border-accent rounded-lg shadow-lg"
+      className="group block rounded-[24px] border border-[var(--surface-border)] bg-white p-8 transition hover:-translate-y-1 hover:border-[var(--brand-green)] hover:bg-white hover:shadow-[0_20px_48px_-32px_rgba(17,32,57,0.5)]"
     >
       <div className=" col-span-3  h-full  flex flex-col ">
         <Image
@@ -28,7 +28,7 @@ export default function GroupCard({
             image_display_url &&
             url &&
             (getConfig().publicRuntimeConfig.DOMAINS ?? []).includes(
-              url.hostname
+              url.hostname,
             )
               ? image_display_url
               : "/images/logos/DefaultOrgLogo.svg"
@@ -37,14 +37,14 @@ export default function GroupCard({
           width="43"
           height="43"
         ></Image>
-        <h3 className="font-inter font-semibold text-lg mt-4 group-hover:text-accent">
+        <h3 className="mt-4 font-montserrat text-lg font-bold text-[var(--dark)] group-hover:text-[var(--accent)]">
           {display_name}
         </h3>
-        <p className="font-inter font-medium text-sm mt-1 mb-6 line-clamp-2">
+        <p className="mb-6 mt-2 line-clamp-2 text-sm leading-6 text-[var(--gray-dark)]">
           {description}
         </p>
 
-        <span className="font-inter mt-auto font-medium text-sm text-accent cursor-pointer flex items-center gap-1">
+        <span className="mt-auto flex cursor-pointer items-center gap-1 text-sm font-bold uppercase tracking-[0.12em] text-[var(--brand-green)]">
           View <RiArrowRightLine />
         </span>
       </div>

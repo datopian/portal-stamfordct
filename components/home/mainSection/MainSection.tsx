@@ -3,16 +3,13 @@ import GroupCard from "../../groups/GroupCard";
 import PopularDatasets from "./PopularDatasets";
 import ActionCard from "../actions/actionCard";
 import Link from "next/link";
-import {
-  ArrowLongRightIcon,
-} from "@heroicons/react/20/solid";
+import { ArrowLongRightIcon } from "@heroicons/react/20/solid";
 import {
   RiQuestionnaireLine,
   RiSearch2Line,
   RiUploadCloud2Line,
 } from "react-icons/ri";
 import { Dataset } from "@/schemas/dataset.interface";
-
 
 export default function MainSection({
   groups,
@@ -22,7 +19,7 @@ export default function MainSection({
   datasets: Array<Dataset>;
 }) {
   return (
-    <section className="custom-container homepage-padding bg-white">
+    <section className="custom-container homepage-padding bg-transparent pt-10 md:pt-14">
       <div className="flex flex-col md:flex-row md:items-start gap-8 mb-[100px]">
         {[
           {
@@ -57,7 +54,7 @@ export default function MainSection({
           {groups.length > 4 && (
             <Link
               href="/groups"
-              className={`font-montserrat font-semibold flex items-center gap-1 uppercase hover:text-darkaccent ml-auto w-fit absolute right-0 top-[-30px]`}
+              className="absolute right-0 top-[-34px] ml-auto flex w-fit items-center gap-1 font-montserrat text-[12px] font-bold uppercase tracking-[0.18em] text-[var(--gray-dark)] transition hover:text-[var(--brand-green)]"
             >
               View all categories
               <ArrowLongRightIcon width={16} />

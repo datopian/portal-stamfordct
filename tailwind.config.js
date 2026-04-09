@@ -2,7 +2,7 @@ const colors = require("tailwindcss/colors");
 const Color = require("color");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
-const themeColor = process.env.NEXT_PUBLIC_THEME_COLOR || "#4977AB";
+const themeColor = process.env.NEXT_PUBLIC_THEME_COLOR || "#253B63";
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -52,7 +52,7 @@ module.exports = {
         raleway: ["raleway", "sans-serif"],
         poppins: ["var(--font-poppins)"],
         montserrat: ["var(--font-montserrat)"],
-        inter: ["var(--font-inter)"]
+        inter: ["var(--font-inter)"],
       },
       boxShadow: {
         blogImg: "inset 0 0 0 50vw rgba(0,28,49,0.76)",

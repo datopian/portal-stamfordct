@@ -24,13 +24,13 @@ function ListItems() {
     <>
       <div className="flex justify-between flex-col md:flex-row md:items-center flex-wrap gap-3">
         <div className="flex gap-2">
-          <h2 className="text-[23px] leading-[28px] capitalize font-bold  ">
+          <h2 className="font-montserrat text-[23px] font-black capitalize leading-[28px] text-[var(--dark)]">
             {searchResults?.count}{" "}
             {options.type === "visualization" ? "Visualizations" : "Datasets"}
           </h2>
         </div>
         <div className="flex gap-2 cursor-pointer">
-          <div className="font-normal text-[14px]">
+          <div className="text-[14px] font-medium text-[var(--gray-dark)]">
             Sort by:{" "}
             <select
               aria-label="Sort datasets by"
@@ -39,6 +39,7 @@ function ListItems() {
                 const value = e.target.value;
                 setOptions({ sort: value });
               }}
+              className="rounded-full border border-[var(--surface-border)] bg-white px-4 py-2 text-[13px] font-bold uppercase tracking-[0.08em] text-[var(--dark)] outline-0 focus:border-[var(--brand-green)]"
             >
               <option value="score desc">Most relevant</option>
               <option value="title_string asc">Name ascending</option>
@@ -78,7 +79,7 @@ function FilterBadges() {
     ) {
       const activeFilters = options[optionKey]
         .map((af) =>
-          searchFacets[facetKey].items.find((item) => item.name === af)
+          searchFacets[facetKey].items.find((item) => item.name === af),
         )
         .filter((item) => !!item);
       return activeFilters ?? [];
@@ -100,9 +101,9 @@ function FilterBadges() {
     }, 0);
 
   return (
-    <div className="border-b border-gray-100 pb-2">
+    <div className="border-b border-[var(--surface-border)] pb-3">
       {!!activeFiltersCount && (
-        <span className="text-xs  text-gray-800 mb-2 inline-block">
+        <span className="mb-2 inline-block text-xs font-bold uppercase tracking-[0.16em] text-[var(--gray-dark)]">
           Applied Filters{" "}
           <span className="font-[600]">
             ({activeFiltersCount}
@@ -159,29 +160,29 @@ function FilterBadges() {
               onClick={() => {
                 setOptions({
                   resFormat: options.resFormat.filter(
-                    (item) => item !== f.name
+                    (item) => item !== f.name,
                   ),
                 });
               }}
             />
           ))}
 
-        {(!!activeFiltersCount) && (
+        {!!activeFiltersCount && (
           <span
             onClick={() => {
               setOptions({
                 resFormat: [],
                 groups: [],
                 orgs: [],
-                tags: []
+                tags: [],
               });
             }}
-            className="inline-flex h-fit w-fit cursor-pointer ml-auto items-center gap-x-0.5 rounded-md bg-gray-900 px-2 py-1 text-xs font-medium text-white ring-1 ring-inset ring-gray-500/10"
+            className="ml-auto inline-flex h-fit w-fit cursor-pointer items-center gap-x-0.5 rounded-full bg-[var(--dark)] px-3 py-1.5 text-xs font-medium uppercase tracking-[0.08em] text-white ring-1 ring-inset ring-black/10"
           >
             clear all
             <button
               type="button"
-              className="group relative -mr-1 size-3.5 rounded-sm hover:bg-gray-500/20"
+              className="group relative -mr-1 size-3.5 rounded-full hover:bg-white/10"
             >
               <XMarkIcon width={14} />
               <span className="absolute -inset-1"></span>
@@ -224,7 +225,7 @@ function ResultsNotFound() {
     router.push("/search", undefined, { shallow: true });
   };
   return (
-    <div className="mt-5 flex flex-col items-center rounded-[20px] border border-[#F7F7F7] bg-white gap-4 px-20">
+    <div className="mt-5 flex flex-col items-center gap-4 rounded-[28px] border border-[var(--surface-border)] bg-white px-8 py-10 text-center md:px-20">
       <Image
         src={"/images/search/noDatasets.svg"}
         height={269}
@@ -232,10 +233,10 @@ function ResultsNotFound() {
         alt="no datasets found"
       />
       <div className="flex flex-col items-center gap-2">
-        <span className="text-[#313131] font-medium text-[18px] leading-[23px]">
+        <span className="text-[18px] font-semibold leading-[23px] text-[var(--dark)]">
           No datasets found.
         </span>
-        <span className="text-[#4C4C4C] text-center font-normal text-[15px] leading-[20px]">
+        <span className="text-center text-[15px] font-normal leading-[24px] text-[var(--gray-dark)]">
           It looks like no datasets match your current search criteria. Try
           reducing the number of filters or broadening your search terms and
           give it another go.
@@ -243,10 +244,10 @@ function ResultsNotFound() {
       </div>
       <div
         onClick={clearFilters}
-        className="cursor-pointer rounded-[20px] w-[118px] h-[41px] bg-[linear-gradient(90deg,_#489FA9_0%,_#803D6E_100%)] flex items-center justify-center"
+        className="flex h-[46px] w-fit cursor-pointer items-center justify-center rounded-full bg-[var(--accent)] px-6 transition hover:bg-[var(--accent-dark)]"
       >
-        <span className="text-white font-medium text-[16px] leading-normal">
-          Clear fitlers
+        <span className="text-[13px] font-bold uppercase tracking-[0.14em] text-white">
+          Clear filters
         </span>
       </div>
     </div>
@@ -265,12 +266,12 @@ function ActiveFilter({
       onClick={() => {
         onClick();
       }}
-      className="inline-flex items-center cursor-pointer gap-x-0.5 rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10"
+      className="inline-flex cursor-pointer items-center gap-x-0.5 rounded-full bg-[var(--surface-muted)] px-3 py-1.5 text-xs font-medium uppercase tracking-[0.06em] text-[var(--gray-dark)] ring-1 ring-inset ring-[var(--surface-border)]"
     >
       {label}
       <button
         type="button"
-        className="group relative -mr-1 size-3.5 rounded-sm hover:bg-gray-500/20"
+        className="group relative -mr-1 size-3.5 rounded-full hover:bg-black/5"
       >
         <XMarkIcon width={14} />
         <span className="absolute -inset-1"></span>

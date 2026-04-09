@@ -21,7 +21,7 @@ export default function GroupCard({
   return (
     <Link
       href={`/groups/${name}`}
-      className={`bg-white hover:bg-accent-50 group border-b-[4px] border-white hover:border-accent p-8 col-span-3 rounded-lg block h-full text-accent  ${theme.styles.shadowSm}`}
+      className={`group col-span-3 block h-full rounded-[24px] bg-white p-8 text-[var(--accent)] transition hover:-translate-y-1 hover:border-[var(--brand-green)] hover:bg-white ${theme.styles.shadowSm}`}
     >
       <Image
         src={
@@ -35,17 +35,15 @@ export default function GroupCard({
         width="54"
         height="54"
       ></Image>
-      <div className={`text-black`}>
-        <h3 className="font-inter font-semibold text-lg mt-4 group-hover:text-accent">
+      <div className="text-black">
+        <h3 className="mt-4 font-montserrat text-lg font-bold text-[var(--dark)] group-hover:text-[var(--accent)]">
           {display_name}
         </h3>
-        <p className="font-inter font-medium text-sm mt-1 mb-6 line-clamp-2">
+        <p className="mb-6 mt-2 line-clamp-2 text-sm leading-6 text-[var(--gray-dark)]">
           {description}
         </p>
       </div>
-      <span
-        className={` font-inter font-medium text-sm flex items-center gap-2`}
-      >
+      <span className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.12em] text-[var(--brand-green)]">
         View collection
         <ArrowRightIcon width={16} />
       </span>

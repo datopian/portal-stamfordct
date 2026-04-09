@@ -1,5 +1,4 @@
 import PortalDefaultLogo from "@/components/_shared/PortalDefaultLogo";
-import { useTheme } from "@/components/theme/theme-provider";
 
 interface IconProps {
   className: string;
@@ -7,7 +6,6 @@ interface IconProps {
 }
 
 const LighterThemeFooter: React.FC = () => {
-  const { theme } = useTheme();
   const navigation = {
     about: [
       { name: "About Us", href: "https://www.datopian.com/about/" },
@@ -105,19 +103,19 @@ const LighterThemeFooter: React.FC = () => {
   };
 
   return (
-    <footer className="bg-accent-50  mt-[155px]">
-      <div
-        className={`custom-container flex flex-col flex-wrap py-10 mx-auto md:items-center lg:items-start md:flex-row md:flex-nowrap`}
-      >
+    <footer className="mt-[120px] border-t-[6px] border-t-[var(--brand-green)] bg-[linear-gradient(180deg,_#203459_0%,_#172744_100%)] text-white">
+      <div className="custom-container mx-auto flex flex-col flex-wrap py-12 md:flex-row md:flex-nowrap md:items-start">
         <div className="justify-between w-full text-center md:text-left lg:flex">
           <div className="w-full lg:w-1/3 md:w-1/2">
-            <h2 className="mt-4 mb-4 font-roboto font-black">ABOUT DATOPIAN</h2>
+            <h2 className="mb-4 mt-4 text-[11px] font-bold uppercase tracking-[0.3em] text-white/65">
+              About Datopian
+            </h2>
             <ul className="space-y-4 text-sm list-none">
               {navigation.about.map((item) => (
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="font-roboto font-normal hover:text-accent transition-all"
+                    className="font-normal text-white/80 transition hover:text-[var(--brand-green)]"
                   >
                     {item.name}
                   </a>
@@ -127,13 +125,15 @@ const LighterThemeFooter: React.FC = () => {
           </div>
 
           <div className="w-full lg:w-1/3 md:w-1/2">
-            <h2 className="mt-4 mb-4 font-roboto font-black">USEFUL LINKS</h2>
+            <h2 className="mb-4 mt-4 text-[11px] font-bold uppercase tracking-[0.3em] text-white/65">
+              Useful Links
+            </h2>
             <ul className="space-y-4 text-sm list-none">
               {navigation.useful.map((item) => (
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="font-roboto font-normal hover:text-accent transition-all"
+                    className="font-normal text-white/80 transition hover:text-[var(--brand-green)]"
                   >
                     {item.name}
                   </a>
@@ -143,13 +143,15 @@ const LighterThemeFooter: React.FC = () => {
           </div>
 
           <div className="w-full lg:w-1/3 md:w-1/2">
-            <h2 className="mt-4 mb-4 font-roboto font-black">GET STARTED</h2>
+            <h2 className="mb-4 mt-4 text-[11px] font-bold uppercase tracking-[0.3em] text-white/65">
+              Get Started
+            </h2>
             <ul className="space-y-4 text-sm list-none">
               {navigation.getStarted.map((item) => (
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="font-roboto font-normal hover:text-accent transition-all"
+                    className="font-normal text-white/80 transition hover:text-[var(--brand-green)]"
                   >
                     {item.name}
                   </a>
@@ -159,15 +161,15 @@ const LighterThemeFooter: React.FC = () => {
           </div>
         </div>
         <div className="w-full md:w-1/2 flex flex-col justify-between text-center md:text-left">
-          <h2 className="mt-4 mb-4 font-roboto font-black">
-            STAY UP TO DATE WITH THE NEWS
+          <h2 className="mb-4 mt-4 text-[11px] font-bold uppercase tracking-[0.3em] text-white/65">
+            Stay Up To Date With The News
           </h2>
           <div className="flex mt-5 space-x-5 justify-center md:justify-start">
             {navigation.social.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="transition-all hover:text-accent"
+                className="text-white/75 transition hover:text-[var(--brand-green)]"
               >
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="flex h-6 w-6" aria-hidden={true} />
@@ -176,10 +178,8 @@ const LighterThemeFooter: React.FC = () => {
           </div>
         </div>
       </div>
-      <div
-        className={`custom-container flex flex-col items-center flex-wrap py-6 mx-auto md:flex-row md:items-center   md:flex-nowrap`}
-      >
-        <PortalDefaultLogo />
+      <div className="custom-container mx-auto flex flex-col flex-wrap items-center border-t border-white/10 py-6 md:flex-row md:flex-nowrap md:items-center">
+        <PortalDefaultLogo inverted />
 
         <div className="md:ml-auto mt-4 md:mt-0">
           <a
@@ -188,7 +188,10 @@ const LighterThemeFooter: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="text-sm">Built with</span><span className="font-extrabold text-[#1f2937] text-xl sm:text-lg font-roboto ">🌀 PortalJS</span>
+            <span className="text-sm text-white/75">Built with</span>
+            <span className="text-xl font-extrabold text-white sm:text-lg">
+              PortalJS
+            </span>
           </a>
         </div>
       </div>

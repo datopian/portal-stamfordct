@@ -66,7 +66,7 @@ const LigtherTheme = ({
               value: 20,
             },
             color: {
-              value: ["#00DEF2", "#6990BE", "#00375F", "#FFB88A"],
+              value: ["#7DB640", "#253B63", "#9BA9BD", "#D7DEE8"],
             },
             shape: {
               type: "circle",
@@ -113,7 +113,7 @@ const LigtherTheme = ({
       >
         Skip to main content
       </a>
-      <div className={` ${styles.LightTheme} font-inter relative`}>
+      <div className={`${styles.LightTheme} font-inter relative`}>
         {Header && <Header />}
         <div className="content-wrapper">
           {Sidebar && <Sidebar />}

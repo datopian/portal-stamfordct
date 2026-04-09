@@ -16,16 +16,20 @@ export default function FacetCard({
   } = useTheme();
 
   return (
-    <section className={`bg-white rounded-[10px] p-5 mb-4  ${styles.shadowMd}`}>
-      <div className="flex items-center pb-4 ">
-        {title && <h1 className="font-bold m-0">{title}</h1>}
+    <section className={`mb-4 rounded-[22px] bg-white p-6 ${styles.shadowMd}`}>
+      <div className="flex items-center pb-4">
+        {title && (
+          <h1 className="m-0 text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--gray-dark)]">
+            {title}
+          </h1>
+        )}
       </div>
       <div>{children}</div>
       {showClear && (
         <div>
           <span
             role="button"
-            className="text-sm cursor-pointer hover:underline"
+            className="mt-4 inline-flex cursor-pointer text-sm font-semibold text-[var(--brand-green)] hover:underline"
             onClick={() => clearAction && clearAction()}
           >
             Clear
