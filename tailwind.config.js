@@ -53,6 +53,7 @@ module.exports = {
         poppins: ["var(--font-poppins)"],
         montserrat: ["var(--font-montserrat)"],
         inter: ["var(--font-inter)"],
+        josefin: ["var(--font-josefin-sans)"],
       },
       boxShadow: {
         blogImg: "inset 0 0 0 50vw rgba(0,28,49,0.76)",

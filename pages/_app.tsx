@@ -12,7 +12,7 @@ import Loader from "../components/_shared/Loader";
 import ThemeProvider from "../components/theme/theme-provider";
 import QuerylessAssistant from "../components/queryless/QuerylessAssistant";
 
-import { Inter, Montserrat, Poppins } from "next/font/google";
+import { Inter, Josefin_Sans, Montserrat, Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -21,6 +21,12 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-poppins",
+});
+
+const josefin_sans = Josefin_Sans({
+  subsets: ["latin"],
+  weight: [ "200", "400","500","600","700"],
+  variable: "--font-josefin-sans",
 });
 
 const montserrat = Montserrat({
@@ -56,7 +62,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div
       id="app-shell"
-      className={cn(poppins.variable, montserrat.variable, inter.variable)}
+      className={cn(poppins.variable, montserrat.variable, inter.variable, josefin_sans.variable, "font-sans")}
     >
       <ThemeProvider themeName={theme}>
         <DefaultSeo {...SEO} />

@@ -47,16 +47,16 @@ export default function LighterThemeHeader() {
   }, [router.events]);
 
   return (
-    <header className="border-b border-[var(--surface-border)] border-t-4 border-t-[var(--brand-green)] bg-white/95 backdrop-blur">
+    <header className=" bg-white/95 backdrop-blur">
       <nav
         className={`mx-auto flex custom-container items-center justify-between gap-6 py-4 ${theme.styles.containerWide}`}
         aria-label="Global"
       >
-        <div className="flex items-center gap-6 xl:gap-12">
+        <div className="flex items-center gap-6 xl:gap-12 w-full justify-between">
           <span className="sr-only">Stamford Open Data</span>
           {renderLogo()}
 
-          <div className="hidden lg:flex lg:items-center lg:gap-x-8">
+          <div className="hidden lg:flex mt-2 mx-auto lg:items-center lg:gap-x-8 font-josefin ">
             {navigation.map((item) => {
               const isActive = router.pathname === item.href;
 
@@ -64,7 +64,7 @@ export default function LighterThemeHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`border-b-2 pb-1 text-[13px] font-bold uppercase tracking-[0.2em] transition ${
+                  className={`border-b-2 text-[18px] font-bold uppercase tracking-[0.5px] transition ${
                     isActive
                       ? "border-[var(--brand-green)] text-[var(--dark)]"
                       : "border-transparent text-[var(--gray-dark)] hover:border-[var(--brand-green)] hover:text-[var(--accent)]"
