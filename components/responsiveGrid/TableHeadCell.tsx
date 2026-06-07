@@ -68,6 +68,10 @@ export default function TableHeadCell({ col: key }) {
                   value={value}
                   min={Math.min(...data.map((row) => row[key]))}
                   max={Math.max(...data.map((row) => row[key]))}
+                  ariaLabelForHandle={[
+                    `Minimum value for ${key}`,
+                    `Maximum value for ${key}`,
+                  ]}
                   onChange={(v: number[]) => {
                     setValue(v);
                     updateFilter(key, v);
@@ -91,9 +95,9 @@ export default function TableHeadCell({ col: key }) {
           <input
             type="text"
             placeholder={`Filter ${filteredData?.length} records `}
-            className="w-full h-[40px] rounded-lg border border-[var(--surface-border)] bg-white p-[5px] font-normal text-[var(--dark)] shadow-[0_10px_24px_rgba(25,37,76,0.05)] outline-none transition placeholder:text-[14px] placeholder:font-normal placeholder:text-[var(--gray)] focus:border-[var(--accent)]"
+            className="h-[40px] w-full rounded-lg border border-[var(--surface-border)] bg-white p-[5px] font-normal text-[var(--dark)] shadow-[0_10px_24px_rgba(25,37,76,0.05)] outline-none transition placeholder:text-[14px] placeholder:font-normal placeholder:text-[var(--gray)] focus:border-[var(--accent)]"
             onChange={(e) => updateFilter(key, e.target.value)}
-            aria-label={`Filter  ${key}`}
+            aria-label={`Filter ${key}`}
           />
         )}
       </div>

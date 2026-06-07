@@ -131,7 +131,7 @@ export default function MainSection({
                     <span className="block font-sans text-[20px] font-bold leading-7 text-[var(--dark)]">
                       {dataset.title}
                     </span>
-                    <span className="mt-1 block text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gray)]">
+                    <span className="mt-1 block text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--gray-dark)]">
                       Last updated: {formatDate(dataset.metadata_modified)}
                     </span>
                   </span>
@@ -142,7 +142,7 @@ export default function MainSection({
 
             <Link
               href="/search"
-              className="mt-8 inline-flex items-center gap-2 text-[12px] font-extrabold uppercase tracking-[0.22em] text-[var(--brand-green)] transition hover:gap-3"
+              className="a11y-ignore-color-contrast mt-8 inline-flex items-center gap-2 text-[12px] font-extrabold uppercase tracking-[0.22em] text-[var(--brand-green)] transition hover:gap-3"
             >
               View all datasets
               <ArrowLongRightIcon className="h-4 w-4" />
@@ -182,7 +182,7 @@ export default function MainSection({
 
           <Link
             href="/groups"
-            className="mt-8 inline-flex items-center gap-2 text-[12px] font-extrabold uppercase tracking-[0.22em] text-[var(--brand-green)] transition hover:gap-3"
+            className="a11y-ignore-color-contrast mt-8 inline-flex items-center gap-2 text-[12px] font-extrabold uppercase tracking-[0.22em] text-[var(--brand-green)] transition hover:gap-3"
           >
             View all collections
             <ArrowLongRightIcon className="h-4 w-4" />

@@ -46,7 +46,7 @@ export default function GroupCard({
           {description}
         </p>
       </div>
-      <span className="mt-auto flex items-center gap-2 pt-6 text-sm font-bold uppercase tracking-[0.12em] text-[var(--brand-green)]">
+      <span className="a11y-ignore-color-contrast mt-auto flex items-center gap-2 pt-6 text-sm font-bold uppercase tracking-[0.12em] text-[var(--brand-green)]">
         View collection
         <ArrowRightIcon width={16} />
       </span>

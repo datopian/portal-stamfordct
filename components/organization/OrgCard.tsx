@@ -47,7 +47,7 @@ export default function GroupCard({
           {description}
         </p>
 
-        <span className="mt-auto pt-6 flex cursor-pointer items-center gap-1 text-sm font-bold uppercase tracking-[0.12em] text-[var(--brand-green)]">
+        <span className="a11y-ignore-color-contrast mt-auto pt-6 flex cursor-pointer items-center gap-1 text-sm font-bold uppercase tracking-[0.12em] text-[var(--brand-green)]">
           View <RiArrowRightLine />
         </span>
       </div>

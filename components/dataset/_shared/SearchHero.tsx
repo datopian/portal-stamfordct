@@ -27,7 +27,7 @@ export default function SearchHero({
       <div className="custom-container  relative py-10 md:py-12 lg:py-14">
         <div className="max-w-[840px] px-1">
           <span className="mb-4 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--gray-dark)]">
-            <span className="h-px w-10 bg-[var(--brand-green)]" />
+            <span className="h-px w-10 bg-[var(--brand-green-text)]" />
             Explore
           </span>
           <h1 className="text-[30px] font-black leading-[1.02] text-[var(--dark)] md:text-[56px]">
@@ -46,7 +46,7 @@ export default function SearchHero({
             <input
               type="text"
               placeholder={`Search for ${title}`}
-              className="grow rounded-full border border-[rgba(114,202,204,0.28)] bg-[rgba(255,255,255,0.96)] px-5 py-2 text-[var(--dark)] shadow-[0_16px_32px_-28px_rgba(25,37,76,0.22)] placeholder:text-[var(--gray)] outline-0 focus:border-[var(--brand-green)] sm:py-4"
+              className="grow rounded-full border border-[rgba(114,202,204,0.28)] bg-[rgba(255,255,255,0.96)] px-5 py-2 text-[var(--dark)] shadow-[0_16px_32px_-28px_rgba(25,37,76,0.22)] placeholder:text-[var(--gray)] outline-0 focus:border-[var(--brand-green-text)] sm:py-4"
               id="search2"
               name="search"
               onChange={(e) => {

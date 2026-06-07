@@ -26,7 +26,7 @@ export default function DatasetSearchForm() {
         />
 
         <button
-          className="inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-8 py-4 text-[13px] font-bold uppercase tracking-[0.22em] text-white transition hover:bg-[var(--interactive-hover-bg)] hover:text-[var(--interactive-hover-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-green)] focus-visible:ring-offset-2"
+          className="inline-flex items-center justify-center rounded-full bg-[var(--brand-aqua)] px-8 py-4 text-[13px] font-bold uppercase tracking-[0.22em] text-[var(--interactive-hover-text)] transition hover:bg-[var(--interactive-hover-bg)] hover:text-[var(--interactive-hover-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-green)] focus-visible:ring-offset-2"
           type="submit"
         >
           SEARCH

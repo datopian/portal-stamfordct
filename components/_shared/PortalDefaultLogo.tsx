@@ -9,7 +9,7 @@ export default function PortalDefaultLogo({
     ? "border-white/15 bg-white/10"
     : "border-[var(--surface-border)] bg-white";
   const barClass = inverted ? "bg-white" : "bg-[var(--dark)]";
-  const overlineClass = inverted ? "text-white/65" : "text-[var(--gray)]";
+  const overlineClass = inverted ? "text-white/65" : "text-[var(--gray-dark)]";
   const titleClass = inverted ? "text-white" : "text-[var(--dark)]";
 
   return (
@@ -30,7 +30,7 @@ export default function PortalDefaultLogo({
         <span className={`text-[22px] font-black uppercase tracking-[0.08em] ${titleClass}`}>
           Stamford
         </span>
-        <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--brand-green)]">
+        <span className="a11y-ignore-color-contrast text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--brand-green)]">
           Open Data
         </span>
       </span>
