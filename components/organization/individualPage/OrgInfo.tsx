@@ -75,7 +75,7 @@ export default function OrgInfo({ org }: { org: Organization }) {
           <div className="flex flex-wrap gap-2">
             {org.tags?.map((tag: Tag) => (
               <span
-                className="rounded-full border border-[rgba(38,56,95,0.1)] bg-[rgba(38,56,95,0.06)] px-3 py-1.5 text-xs font-semibold text-[var(--dark)]"
+                className="rounded-full border border-[var(--badge-border)] bg-[var(--badge-bg)] px-3 py-1.5 text-xs font-semibold text-[var(--badge-text)]"
                 key={tag.id}
               >
                 {tag.display_name}

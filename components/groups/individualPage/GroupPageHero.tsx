@@ -47,7 +47,7 @@ export default function GroupPageHero({ group }: { group: Group }) {
             {heroMeta.map((item) => (
               <span
                 key={item}
-                className="inline-flex items-center rounded-full border border-[var(--surface-border)] bg-white/92 px-3.5 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--gray-dark)] shadow-[0_18px_40px_-32px_rgba(16,32,68,0.75)]"
+                className="inline-flex items-center rounded-full border border-[var(--badge-border)] bg-[var(--badge-bg)] px-3.5 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--badge-text)] shadow-[0_18px_40px_-32px_rgba(16,32,68,0.75)]"
               >
                 {item}
               </span>

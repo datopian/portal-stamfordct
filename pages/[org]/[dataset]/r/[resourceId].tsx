@@ -80,7 +80,7 @@ export default function ResourcePage({
 
   return (
     <PrimeReactProvider>
-      <ResourcePageStructuredData resource={resource} orgName={orgName} dataset={dataset} />
+      <ResourcePageStructuredData resource={resource} orgName={orgName} dataset={dataset as string} />
       <Layout>
         <ResourcePageHero resource={resource} />
         <section className="border-b border-[var(--surface-border)] bg-white/90">

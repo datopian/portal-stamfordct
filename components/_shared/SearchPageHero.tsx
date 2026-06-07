@@ -17,10 +17,11 @@ export default function SearchPageHero({
   } = useTheme();
 
   return (
-    <section className="relative border-b border-[var(--surface-border)] bg-[linear-gradient(180deg,_rgba(255,255,255,0.98)_0%,_rgba(238,244,246,0.96)_100%)]">
+    <section className="relative border-b border-[var(--surface-border)] bg-[linear-gradient(180deg,_rgba(255,255,255,0.98)_0%,_rgba(223,244,243,0.32)_42%,_rgba(238,244,246,0.96)_100%)]">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-[-8%] top-[18%] h-[220px] w-[220px] rounded-full bg-[radial-gradient(circle,_rgba(112,207,203,0.09)_0%,_rgba(112,207,203,0)_72%)]" />
-        <div className="absolute right-[-10%] top-[4%] h-[360px] w-[720px] rounded-[50%] bg-[linear-gradient(180deg,_rgba(112,207,203,0.11)_0%,_rgba(112,207,203,0.02)_100%)]" />
+        <div className="absolute left-[-8%] top-[18%] h-[220px] w-[220px] rounded-full bg-[radial-gradient(circle,_rgba(114,202,204,0.13)_0%,_rgba(114,202,204,0)_72%)]" />
+        <div className="absolute left-[24%] top-[14%] h-[120px] w-[120px] rounded-full bg-[radial-gradient(circle,_rgba(138,214,29,0.1)_0%,_rgba(138,214,29,0)_70%)]" />
+        <div className="absolute right-[-10%] top-[4%] h-[360px] w-[720px] rounded-[50%] bg-[linear-gradient(180deg,_rgba(114,202,204,0.14)_0%,_rgba(184,192,199,0.05)_56%,_rgba(114,202,204,0.02)_100%)]" />
       </div>
 
       <div className="custom-container relative py-10 md:py-12 lg:py-14">
@@ -35,7 +36,7 @@ export default function SearchPageHero({
             {titleAccent ? (
               <>
                 {" "}
-                <span className="text-[var(--accent)]">{titleAccent}</span>
+                <span className="text-[var(--brand-green-dark)]">{titleAccent}</span>
               </>
             ) : null}
           </h1>

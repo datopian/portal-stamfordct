@@ -15,7 +15,10 @@ export default function TableData() {
     }
   }, [data]);
   return (
-    <div ref={scrollRef} className="overflow-auto max-h-[750px] relative border-y min-h-[500px] w-full">
+    <div
+      ref={scrollRef}
+      className="relative min-h-[500px] w-full overflow-auto border border-[var(--surface-border)] bg-white shadow-[0_22px_60px_rgba(25,37,76,0.08)]"
+    >
       {/* Table */}
       <table
         className="min-w-full table-auto border-collapse border-0 static"
@@ -23,7 +26,7 @@ export default function TableData() {
       >
         {/* Table Head */}
         <TableHead className="sticky top-0 z-[15] border-b  shadow-sm" />
-        <tbody className="divide-y divide-accent-100">
+        <tbody className="divide-y divide-[var(--surface-border)]">
           {paginatedData.map((row, rowIndex) => (
             <tr key={rowIndex} role="row">
               {columns.map((key, z) => (

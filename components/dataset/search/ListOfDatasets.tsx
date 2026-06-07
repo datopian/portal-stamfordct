@@ -266,7 +266,7 @@ function ActiveFilter({
       onClick={() => {
         onClick();
       }}
-      className="inline-flex cursor-pointer items-center gap-x-0.5 rounded-full bg-[var(--surface-muted)] px-3 py-1.5 text-xs font-medium text-[var(--gray-dark)] ring-1 ring-inset ring-[var(--surface-border)]"
+      className="inline-flex cursor-pointer items-center gap-x-0.5 rounded-full border border-[var(--badge-border)] bg-[var(--badge-bg)] px-3 py-1.5 text-xs font-medium text-[var(--badge-text)]"
     >
       {label}
       <button

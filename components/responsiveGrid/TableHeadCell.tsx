@@ -1,10 +1,10 @@
 import Slider from "rc-slider";
-import { sortConfigProps, useResourceData } from "./DataProvider";
-import { isValidDate } from "./utils";
-
 import { useState } from "react";
 import { RiPushpin2Line } from "react-icons/ri";
+
 import DateRange from "./DateRange";
+import { sortConfigProps, useResourceData } from "./DataProvider";
+import { isValidDate } from "./utils";
 
 export default function TableHeadCell({ col: key }) {
   const {
@@ -24,15 +24,17 @@ export default function TableHeadCell({ col: key }) {
 
   return (
     <th
-      className={`py-2 min-w-[140px] border-0 text-left bg-accent-50 whitespace-nowrap group  ${
+      className={`group min-w-[140px] whitespace-nowrap border-0 bg-[var(--accent-light)] py-2 text-left ${
         !visibleColumns.includes(key) ? "hidden" : ""
       } ${
-        pinnedColumns.includes(key) ? "sticky left-0 z-10 bg-accent-50 " : ""
+        pinnedColumns.includes(key)
+          ? "sticky left-0 z-10 bg-[var(--accent-light)]"
+          : ""
       }`}
       role="columnheader"
       scope="col"
     >
-      <div className="flex justify-between text-left px-3 pb-2 gap-2">
+      <div className="flex justify-between gap-2 px-3 pb-2 text-left">
         <div className="flex truncate">
           <button
             onClick={() =>
@@ -43,9 +45,9 @@ export default function TableHeadCell({ col: key }) {
               )
             }
             title={key}
-            className="text-sm text-left truncate font-normal text-gray-600"
+            className="truncate text-left text-sm font-normal text-[var(--gray-dark)]"
           >
-            <span className="uppercase font-[600]">{key}</span>{" "}
+            <span className="font-[600]">{key}</span>{" "}
             {sortConfig?.key === key
               ? sortConfig.direction === "asc"
                 ? "↑"
@@ -56,12 +58,11 @@ export default function TableHeadCell({ col: key }) {
         <PinButton col={key} />
       </div>
 
-      <div className="border-t border-accent-100 px-3 pt-2">
-        {/* Filters */}
+      <div className="border-t border-[var(--surface-border)] px-3 pt-2">
         {typeof data[0]?.[key] === "number" ? (
-          <div className=" h-[34px] flex items-center w-full group">
+          <div className="group flex h-[34px] w-full items-center">
             <div className="w-full">
-              <div className="mx-2 relative">
+              <div className="relative mx-2">
                 <Slider
                   range
                   value={value}
@@ -87,20 +88,18 @@ export default function TableHeadCell({ col: key }) {
             }}
           />
         ) : (
-          <>
-            <input
-              type="text"
-              placeholder={`Filter ${filteredData?.length} records `}
-              className="w-full shadow-sm  p-[5px] border-0 font-normal border-gray-200 rounded-md p-1 bg-white placeholder:font-normal placeholder:text-[14px]"
-              onChange={(e) => updateFilter(key, e.target.value)}
-              aria-label={`Filter  ${key}`}
-            />
-          </>
+          <input
+            type="text"
+            placeholder={`Filter ${filteredData?.length} records `}
+            className="w-full h-[40px] rounded-lg border border-[var(--surface-border)] bg-white p-[5px] font-normal text-[var(--dark)] shadow-[0_10px_24px_rgba(25,37,76,0.05)] outline-none transition placeholder:text-[14px] placeholder:font-normal placeholder:text-[var(--gray)] focus:border-[var(--accent)]"
+            onChange={(e) => updateFilter(key, e.target.value)}
+            aria-label={`Filter  ${key}`}
+          />
         )}
       </div>
 
       {pinnedColumns.includes(key) && (
-        <span className="absolute right-[0px] h-full w-[1px] bg-gray-100 top-0"></span>
+        <span className="absolute right-[0px] top-0 h-full w-[1px] bg-[var(--surface-border)]"></span>
       )}
     </th>
   );
@@ -111,7 +110,7 @@ export const PinButton = ({ col }: { col: string }) => {
   return (
     <button
       onClick={() => togglePinColumn(col)}
-      className={` text-left w-fit p-1 bg-white rounded shadow group-hover:opacity-[1] transition-all relative ${
+      className={`relative w-fit rounded-lg border border-[var(--surface-border)] bg-white p-1 text-left text-[var(--accent)] shadow-[0_10px_24px_rgba(25,37,76,0.05)] transition-all group-hover:opacity-[1] ${
         !pinnedColumns.includes(col) ? "opacity-0" : ""
       }`}
       title={"Pin this column"}

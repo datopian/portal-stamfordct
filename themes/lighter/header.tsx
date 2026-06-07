@@ -32,9 +32,11 @@ export default function LighterThemeHeader() {
   }, [router.events]);
 
   return (
-    <header className="border-b border-[var(--surface-border)] bg-white/95 backdrop-blur">
+    <header className="relative  border-[var(--surface-border)] bg-white backdrop-blur">
+
+      <div className="h-[3px] w-full hidden bg-[linear-gradient(90deg,_var(--brand-green)_0%,_var(--brand-aqua)_52%,_rgba(114,202,204,0)_100%)]" />
       <nav
-        className={`mx-auto flex custom-container items-center justify-between gap-6 py-4 lg:py-5 ${theme.styles.containerWide}`}
+        className={`relative mx-auto flex custom-container items-center justify-between gap-6 py-4 lg:py-5 ${theme.styles.containerWide}`}
         aria-label="Global"
       >
         <div className="flex w-full items-center justify-between gap-6 xl:gap-12">
@@ -52,7 +54,7 @@ export default function LighterThemeHeader() {
                   className={`border-b-2 pb-1 text-[18px] font-bold uppercase tracking-[0.04em] transition ${
                     isActive
                       ? "border-[var(--brand-green)] text-[var(--dark)]"
-                      : "border-transparent text-[var(--gray-dark)] hover:border-[var(--brand-green)] hover:text-[var(--accent)]"
+                      : "border-transparent text-[var(--brand-slate)] hover:border-[var(--brand-green)] hover:text-[var(--accent)]"
                   }`}
                 >
                   {item.label}
@@ -64,7 +66,7 @@ export default function LighterThemeHeader() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-full border border-[var(--surface-border)] bg-[var(--surface-muted)] p-2.5 text-[var(--dark)]"
+            className="inline-flex items-center justify-center rounded-full border border-[var(--surface-border)] bg-[linear-gradient(180deg,_rgba(255,255,255,0.98)_0%,_rgba(223,244,243,0.9)_100%)] p-2.5 text-[var(--dark)] shadow-[0_12px_24px_rgba(25,37,76,0.08)]"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -78,14 +80,14 @@ export default function LighterThemeHeader() {
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
-        <div className="fixed inset-0 z-40 bg-[rgba(25,37,76,0.24)] backdrop-blur-[4px]" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 flex w-full max-w-[360px] flex-col overflow-y-auto border-l border-[var(--surface-border)] bg-[linear-gradient(180deg,_rgba(255,255,255,1)_0%,_rgba(237,245,244,0.98)_100%)] px-5 py-5 shadow-[0_30px_80px_-24px_rgba(25,37,76,0.42)]">
+        <div className="fixed inset-0 z-40 bg-[rgba(25,37,76,0.32)] backdrop-blur-[6px]" />
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 flex w-full max-w-[360px] flex-col overflow-y-auto border-l border-[var(--surface-border)] bg-[linear-gradient(180deg,_rgba(255,255,255,1)_0%,_rgba(223,244,243,0.94)_52%,_rgba(237,245,244,0.98)_100%)] px-5 py-5 shadow-[0_30px_80px_-24px_rgba(25,37,76,0.42)]">
           <div className="flex items-start justify-between gap-3 pb-5">
             <span className="sr-only">Stamford Open Data</span>
             <div className="origin-left scale-[0.9] shrink-0">{renderLogo()}</div>
             <button
               type="button"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--surface-border)] bg-white text-[var(--text-base)] transition hover:border-[var(--brand-green)] hover:bg-[var(--surface-muted)]"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--surface-border)] bg-white text-[var(--text-base)] shadow-[0_10px_20px_rgba(25,37,76,0.08)] transition hover:border-[var(--brand-green)] hover:bg-[var(--surface-muted)]"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
@@ -93,7 +95,7 @@ export default function LighterThemeHeader() {
             </button>
           </div>
 
-          <div className="flex flex-1 flex-col rounded-[28px] border border-[var(--surface-border)] bg-white/95 p-4 shadow-[0_20px_48px_-36px_rgba(25,37,76,0.18)]">
+          <div className="flex flex-1 flex-col rounded-[28px] border border-[var(--surface-border)] bg-[linear-gradient(180deg,_rgba(255,255,255,0.98)_0%,_rgba(248,251,251,0.98)_100%)] p-4 shadow-[0_20px_48px_-36px_rgba(25,37,76,0.18)]">
             <div className="mb-4 border-b border-[var(--surface-border)] pb-4">
               <p className="font-sans text-[11px] font-bold uppercase tracking-[0.24em] text-[var(--gray-dark)]">
                 Menu
@@ -108,10 +110,10 @@ export default function LighterThemeHeader() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`flex min-h-[52px] items-center rounded-[18px] px-4 text-[16px] font-semibold tracking-[0.01em] transition ${
+                    className={`flex min-h-[56px] items-center rounded-[18px] px-4 text-[16px] font-semibold tracking-[0.01em] transition ${
                       isActive
-                        ? "bg-[var(--dark)] text-white shadow-[0_16px_36px_-28px_rgba(25,37,76,0.35)]"
-                        : "text-[var(--dark)] hover:bg-[var(--surface-muted)]"
+                        ? "border border-[rgba(138,214,29,0.35)] bg-[linear-gradient(135deg,_var(--dark)_0%,_var(--brand-slate)_100%)] text-white shadow-[0_18px_36px_-24px_rgba(25,37,76,0.42)]"
+                        : "border border-transparent text-[var(--dark)] hover:border-[rgba(114,202,204,0.3)] hover:bg-[rgba(114,202,204,0.08)]"
                     }`}
                   >
                     {item.label}

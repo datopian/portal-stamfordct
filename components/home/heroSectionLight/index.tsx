@@ -21,7 +21,7 @@ export default function HeroSectionLight({
   };
 }) {
   return (
-    <section className="relative overflow-hidden border-b border-[var(--surface-border)] bg-[linear-gradient(180deg,_rgba(255,255,255,0.98)_0%,_rgba(238,244,246,0.98)_100%)]">
+    <section className="relative overflow-hidden border-b border-[var(--surface-border)] bg-[linear-gradient(180deg,_rgba(255,255,255,0.98)_0%,_rgba(223,244,243,0.34)_42%,_rgba(237,245,244,0.98)_100%)]">
       {heroBgImg ? (
         <>
           <div
@@ -39,16 +39,17 @@ export default function HeroSectionLight({
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 opacity-80"
         >
-          <div className="absolute left-[-10%] top-[18%] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,_rgba(112,207,203,0.08)_0%,_rgba(112,207,203,0)_72%)]" />
-          <div className="absolute right-[-8%] top-[8%] h-[500px] w-[820px] rounded-[50%] border border-white/60 bg-[linear-gradient(180deg,_rgba(112,207,203,0.14)_0%,_rgba(112,207,203,0.03)_100%)]" />
+          <div className="absolute left-[-10%] top-[18%] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,_rgba(114,202,204,0.13)_0%,_rgba(114,202,204,0)_72%)]" />
+          <div className="absolute left-[18%] top-[10%] h-[140px] w-[140px] rounded-full bg-[radial-gradient(circle,_rgba(138,214,29,0.1)_0%,_rgba(138,214,29,0)_72%)]" />
+          <div className="absolute right-[-8%] top-[8%] h-[500px] w-[820px] rounded-[50%] border border-white/60 bg-[linear-gradient(180deg,_rgba(114,202,204,0.18)_0%,_rgba(184,192,199,0.06)_56%,_rgba(114,202,204,0.03)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 h-[380px] bg-[url('/themes/lighter/assets/background-blur.png')] bg-cover bg-center opacity-70" />
         </div>
       )}
 
       <div className="custom-container relative mx-auto">
         <div className="grid min-h-[620px] items-center gap-10 py-10 lg:grid-cols-[minmax(0,540px)_minmax(0,1fr)] lg:gap-12 lg:py-16">
-          <div className="max-w-[540px] rounded-[32px] bg-[linear-gradient(145deg,_#13264d_0%,_#102044_100%)] px-8 py-9 text-white shadow-[0_40px_80px_-48px_rgba(16,32,68,0.95)] md:px-10 md:py-11">
-            <span className="mb-6 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.32em] text-white/70">
+          <div className="max-w-[540px] rounded-[32px] border border-[rgba(114,202,204,0.16)] bg-[linear-gradient(145deg,_#13264d_0%,_#102044_68%,_#22325f_100%)] px-8 py-9 text-white shadow-[0_40px_80px_-48px_rgba(16,32,68,0.95)] md:px-10 md:py-11">
+            <span className="mb-6 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.32em] text-[rgba(223,244,243,0.8)]">
               <span className="h-px w-10 bg-[var(--brand-green)]" />
               Open Data Portal
             </span>
@@ -60,7 +61,7 @@ export default function HeroSectionLight({
               <span className="text-[var(--brand-green)]">Data.</span>
             </h1>
 
-            <p className="mb-8 mt-6 max-w-[28rem] text-[16px] leading-8 text-white/84">
+            <p className="mb-8 mt-6 max-w-[28rem] text-[16px] leading-8 text-[rgba(223,244,243,0.88)]">
               Search, explore, and reuse public datasets published across
               Stamford services, departments, and initiatives.
             </p>
