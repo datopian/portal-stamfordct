@@ -27,7 +27,7 @@ export default function SearchHero({
       <div className="custom-container  relative py-10 md:py-12 lg:py-14">
         <div className="max-w-[840px] px-1">
           <span className="mb-4 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--gray-dark)]">
-            <span className="h-px w-10 bg-[var(--brand-green-text)]" />
+            <span className="h-px w-10 bg-[var(--brand-green)]" />
             Explore
           </span>
           <h1 className="text-[30px] font-black leading-[1.02] text-[var(--dark)] md:text-[56px]">
