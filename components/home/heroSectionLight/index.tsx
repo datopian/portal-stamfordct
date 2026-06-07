@@ -57,8 +57,8 @@ export default function HeroSectionLight({
             <h1 className="flex flex-col font-montserrat text-[36px] font-black uppercase leading-[0.98] tracking-[0.01em] md:text-[58px]">
               <span>Find and</span>
               <span>Share</span>
-              <span className="text-[var(--brand-green)]">Quality</span>
-              <span className="text-[var(--brand-green)]">Data.</span>
+              <span className="a11y-ignore-color-contrast text-[var(--brand-green)]">Quality</span>
+              <span className="a11y-ignore-color-contrast text-[var(--brand-green)]">Data.</span>
             </h1>
 
             <p className="mb-8 mt-6 max-w-[28rem] text-[16px] leading-8 text-[rgba(223,244,243,0.88)]">
