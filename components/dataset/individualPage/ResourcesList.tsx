@@ -52,7 +52,7 @@ export default function ResourcesList({
                 {resource.url && (
                   <Link
                     href={resource.url}
-                    className="inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-full bg-[var(--dark)] px-4 py-2 text-sm font-bold text-white shadow-sm transition hover:bg-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-green)] focus-visible:ring-offset-2"
+                    className="inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-full bg-[var(--dark)] px-4 py-2 text-sm font-bold text-white shadow-sm transition hover:bg-[var(--interactive-hover-bg)] hover:text-[var(--interactive-hover-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-green)] focus-visible:ring-offset-2"
                   >
                     <RiDownload2Fill aria-hidden="true" />
                     <span>Download</span>

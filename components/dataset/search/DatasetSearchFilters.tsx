@@ -97,7 +97,7 @@ export default function DatasetSearchFilters() {
               <button
                 onClick={() => setSeeMoreOrgs(!seeMoreOrgs)}
                 type="button"
-                className="mt-2 rounded-full bg-[var(--accent)] px-4 py-[10px] text-[12px] font-semibold leading-[15px] text-white transition hover:bg-[var(--accent-dark)]"
+                className="mt-2 rounded-full bg-[var(--accent)] px-4 py-[10px] text-[12px] font-semibold leading-[15px] text-white transition hover:bg-[var(--interactive-hover-bg)] hover:text-[var(--interactive-hover-text)]"
               >
                 See {seeMoreOrgs ? "Less" : "More"}
               </button>
@@ -144,7 +144,7 @@ export default function DatasetSearchFilters() {
                 <button
                   onClick={() => setSeeMoreGroups(!seeMoreGroups)}
                   type="button"
-                  className="mt-2 rounded-full bg-[var(--accent)] px-4 py-[10px] text-[12px] font-semibold leading-[15px] text-white transition hover:bg-[var(--accent-dark)]"
+                  className="mt-2 rounded-full bg-[var(--accent)] px-4 py-[10px] text-[12px] font-semibold leading-[15px] text-white transition hover:bg-[var(--interactive-hover-bg)] hover:text-[var(--interactive-hover-text)]"
                 >
                   See {seeMoreGroups ? "Less" : "More"}
                 </button>

@@ -12,6 +12,8 @@
   --badge-bg-strong: rgba(184, 192, 199, 0.24);
   --badge-border: rgba(184, 192, 199, 0.52);
   --badge-text: #4b5075;
+  --interactive-hover-bg: #8ad61d;
+  --interactive-hover-text: #19254c;
   --dark: #19254c;
   --gray: #73809a;
   --gray-mid: #97a3b4;
@@ -80,11 +82,15 @@
 }
 
 .bgDark {
-  transition: background-color 0.35s;
+  transition:
+    background-color 0.35s,
+    color 0.35s;
   background-color: var(--dark);
+  color: white;
 
   &:hover {
-    background-color: var(--accent-dark);
+    background-color: var(--interactive-hover-bg);
+    color: var(--interactive-hover-text);
   }
 }
 

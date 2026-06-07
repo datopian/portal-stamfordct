@@ -38,7 +38,7 @@ const quickActions: Array<{
   {
     title: "Request Data",
     description: "Send a request for data you could not find.",
-    href: "/request",
+    href: "mailto:request@stamfordct.org?subject=Data%20Request%20from%20Stamford%20Open%20Data%20Portal",
     Icon: QuestionMarkCircleIcon,
   },
   
@@ -213,8 +213,8 @@ export default function MainSection({
               and help us build a better open data portal for Stamford.
             </p>
             <Link
-              href="/request"
-              className="mt-6 inline-flex w-fit items-center gap-3 rounded-[8px] bg-[var(--dark)] px-6 py-4 text-[12px] font-extrabold uppercase tracking-[0.24em] text-white transition hover:bg-[var(--accent)]"
+              href="mailto:request@stamfordct.org?subject=Data%20Request%20from%20Stamford%20Open%20Data%20Portal"
+              className="mt-6 inline-flex w-fit items-center gap-3 rounded-[8px] bg-[var(--dark)] px-6 py-4 text-[12px] font-extrabold uppercase tracking-[0.24em] text-white transition hover:bg-[var(--interactive-hover-bg)] hover:text-[var(--interactive-hover-text)]"
             >
               Request Data
               <ArrowLongRightIcon className="h-4 w-4" />

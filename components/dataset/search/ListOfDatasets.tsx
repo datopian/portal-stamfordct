@@ -177,7 +177,7 @@ function FilterBadges() {
                 tags: [],
               });
             }}
-            className="ml-auto inline-flex h-fit w-fit cursor-pointer items-center gap-x-0.5 rounded-full bg-[var(--dark)] px-3 py-1.5 text-xs font-medium text-white ring-1 ring-inset ring-black/10"
+            className="ml-auto inline-flex h-fit w-fit cursor-pointer items-center gap-x-0.5 rounded-full bg-[var(--dark)] px-3 py-1.5 text-xs font-medium text-white ring-1 ring-inset ring-black/10 transition hover:bg-[var(--interactive-hover-bg)] hover:text-[var(--interactive-hover-text)]"
           >
             clear all
             <button
@@ -244,7 +244,7 @@ function ResultsNotFound() {
       </div>
       <div
         onClick={clearFilters}
-        className="flex h-[46px] w-fit cursor-pointer items-center justify-center rounded-full bg-[var(--accent)] px-6 transition hover:bg-[var(--accent-dark)]"
+        className="flex h-[46px] w-fit cursor-pointer items-center justify-center rounded-full bg-[var(--accent)] px-6 transition hover:bg-[var(--interactive-hover-bg)] hover:text-[var(--interactive-hover-text)]"
       >
         <span className="text-[13px] font-bold uppercase tracking-[0.14em] text-white">
           Clear filters

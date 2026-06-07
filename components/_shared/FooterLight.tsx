@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
     ],
     useful: [
       { name: "Organizations", href: "/organizations" },
-      { name: "Request data", href: "/request" },
+      { name: "Request data", href: "mailto:request@stamfordct.org?subject=Data%20Request%20from%20Stamford%20Open%20Data%20Portal" },
       { name: "Login", href: "https://cloud.portaljs.com/auth/signin" },
     ],
     getStarted: [
