@@ -12,16 +12,10 @@ import Loader from "../components/_shared/Loader";
 import ThemeProvider from "../components/theme/theme-provider";
 import QuerylessAssistant from "../components/queryless/QuerylessAssistant";
 
-import { Inter, Josefin_Sans, Montserrat } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-
-const josefin_sans = Josefin_Sans({
-  subsets: ["latin"],
-  weight: [ "200", "400","500","600","700"],
-  variable: "--font-josefin-sans",
-});
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -36,7 +30,6 @@ const inter = Inter({
 const ROOT_FONT_CLASSES = [
   montserrat.variable,
   inter.variable,
-  josefin_sans.variable,
   inter.className,
 ];
 
