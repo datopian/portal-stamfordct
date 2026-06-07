@@ -5,7 +5,7 @@ export default function TablePagination() {
   return (
     <nav
       aria-label="Pagination"
-      className="flex items-center justify-between bg-white  py-3 w-full"
+      className="flex items-center justify-between py-3 w-full"
       role="navigation"
     >
       <div className="hidden sm:block">

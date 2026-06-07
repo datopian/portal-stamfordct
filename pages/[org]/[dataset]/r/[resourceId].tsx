@@ -97,9 +97,6 @@ export default function ResourcePage({
         <div>
           <section className="pb-16 pt-6 md:pt-8">
             <div className="custom-container py-2">
-              <div className="mb-4">
-                <ResourcesBadges resources={[resource]} />
-              </div>
               <div className="flex flex-col  md:flex-row gap-4 md:items-center py-2">
                 <span className="font-medium text-gray-500 inline">
                   <svg
@@ -159,7 +156,7 @@ export default function ResourcePage({
               <div className=" py-4">
                 <Link
                   href={resource.url}
-                  className="bg-accent h-auto py-2 px-4 text-sm text-white rounded-xl font-roboto font-bold hover:bg-darkaccent hover:text-white duration-150 flex items-center gap-1 w-fit"
+                  className="inline-flex min-h-[48px] w-fit items-center gap-2 rounded-full bg-[var(--dark)] px-5 py-3 text-sm font-bold text-white shadow-[0_14px_36px_rgba(25,37,76,0.14)] transition hover:bg-[var(--interactive-hover-bg)] hover:text-[var(--interactive-hover-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-green)] focus-visible:ring-offset-2"
                 >
                   Download
                   <svg
@@ -168,7 +165,7 @@ export default function ResourcePage({
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="w-6 h-6"
+                    className="h-5 w-5"
                   >
                     <path
                       strokeLinecap="round"

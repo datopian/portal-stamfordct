@@ -60,7 +60,7 @@ export default function TableHeadCell({ col: key }) {
 
       <div className="border-t border-[var(--surface-border)] px-3 pt-2">
         {typeof data[0]?.[key] === "number" ? (
-          <div className="group flex h-[34px] w-full items-center">
+          <div className="group flex h-[40px] w-full items-center">
             <div className="w-full">
               <div className="relative mx-2">
                 <Slider
