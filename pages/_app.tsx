@@ -39,6 +39,14 @@ const inter = Inter({
   variable: "--font-inter"
 });
 
+const ROOT_FONT_CLASSES = [
+  poppins.variable,
+  montserrat.variable,
+  inter.variable,
+  josefin_sans.variable,
+  inter.className,
+];
+
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID ?? '';
 
 const handleRouteChange = (url: string) => {
@@ -59,10 +67,20 @@ function MyApp({ Component, pageProps }: AppProps) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.add(...ROOT_FONT_CLASSES);
+
+    return () => {
+      root.classList.remove(...ROOT_FONT_CLASSES);
+    };
+  }, []);
+
   return (
     <div
       id="app-shell"
-      className={cn(poppins.variable, montserrat.variable, inter.variable, josefin_sans.variable, "font-sans")}
+      className={cn(...ROOT_FONT_CLASSES, "font-sans")}
     >
       <ThemeProvider themeName={theme}>
         <DefaultSeo {...SEO} />

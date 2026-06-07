@@ -29,7 +29,7 @@ export default function FacetCard({
         <div>
           <span
             role="button"
-            className="mt-4 inline-flex cursor-pointer text-sm font-semibold text-[var(--brand-green)] hover:underline"
+            className="mt-4 inline-flex cursor-pointer text-sm font-semibold text-[var(--accent)] transition hover:text-[var(--accent-dark)] hover:underline"
             onClick={() => clearAction && clearAction()}
           >
             Clear

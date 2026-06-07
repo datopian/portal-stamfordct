@@ -32,15 +32,11 @@ export default function PortalDefaultLogo({
           className={`absolute bottom-[13px] left-[28px] h-[14px] w-[4px] rounded-t-sm ${barClass}`}
         />
       </span>
-      <span className="flex flex-col leading-none">
-        <span
-          className={`text-[9px] font-bold uppercase tracking-[0.34em] ${overlineClass}`}
-        >
+      <span className="flex flex-col leading-none font-sans">
+        <span className={`text-[9px] font-bold uppercase tracking-[0.34em] ${overlineClass}`}>
           City of
         </span>
-        <span
-          className={`text-[22px] font-black uppercase tracking-[0.08em] ${titleClass}`}
-        >
+        <span className={`text-[22px] font-black uppercase tracking-[0.08em] ${titleClass}`}>
           Stamford
         </span>
         <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--brand-green)]">

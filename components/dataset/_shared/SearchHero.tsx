@@ -14,49 +14,53 @@ export default function SearchHero({
     theme: { styles },
   } = useTheme();
   return (
-    <>
-      <section className="row-start-1 row-span-3 col-span-full">
-        <div
-          className="bg-cover bg-center bg-no-repeat  pt-[60px] pb-[36px] flex flex-col"
-          style={{}}
-        >
-          <div className="grid md:grid-cols-2 mx-auto items-center grow mx-auto custom-container bg-white">
-            <div className="col-span-1">
-              <h1 className="text-[55px] font-black ">{title}</h1>
-            </div>
-          </div>
+    <section className="relative overflow-hidden border-b border-[var(--surface-border)] bg-[linear-gradient(180deg,_rgba(255,255,255,0.98)_0%,_rgba(237,245,244,0.96)_100%)]">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+      >
+        <div className="absolute left-[-10%] top-[18%] h-[220px] w-[220px] rounded-full bg-[radial-gradient(circle,_rgba(114,202,204,0.12)_0%,_rgba(114,202,204,0)_72%)]" />
+        <div className="absolute right-[-12%] top-[4%] h-[360px] w-[720px] rounded-[50%] bg-[linear-gradient(180deg,_rgba(114,202,204,0.12)_0%,_rgba(184,192,199,0.06)_54%,_rgba(114,202,204,0.02)_100%)]" />
+      </div>
+
+      <div className="custom-container  relative py-10 md:py-12 lg:py-14">
+        <div className="max-w-[840px] px-1">
+          <span className="mb-4 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--gray-dark)]">
+            <span className="h-px w-10 bg-[var(--brand-green)]" />
+            Explore
+          </span>
+          <h1 className="text-[30px] font-black leading-[1.02] text-[var(--dark)] md:text-[56px]">
+            {title}
+          </h1>
         </div>
-      </section>
-      <section className={`grid row-start-3 row-span-2 col-span-full pt-4 `}>
-        <div className={`custom-container bg-white ${styles.shadowMd}`}>
-          <div className="">
-            <form className="min-h-[70px] flex flex-col lg:flex-row bg-white pr-5 py-3 rounded-xl" onSubmit={e => {
+
+        <div className={`mt-8 md:mt-10 `}>
+          <form
+            className="flex min-h-[56px] sm:min-h-[70px] flex-col  lg:flex-row lg:items-center"
+            onSubmit={(e) => {
               e.preventDefault();
               return false;
-            }}>
-              <input
-                type="text"
-                placeholder={`Search for ${title}`}
-                className="mx-4 grow py-3 border-0 placeholder:text-neutral-400 outline-0"
-                id="search2"
-                name="search"
-                onChange={(e) => {
-                  onChange(e.target.value);
-                }}
-                value={searchValue}
-                aria-label={`Search ${title}`}
-              />
-              <button
-                type="submit"
-                className="sr-only"
-              >
-                Submit
-              </button>
-            </form>
-          </div>
+            }}
+          >
+            <input
+              type="text"
+              placeholder={`Search for ${title}`}
+              className="grow rounded-full border border-[var(--surface-border)] bg-white px-5 py-2 sm:py-4 text-[var(--dark)] placeholder:text-[var(--gray)] outline-0 focus:border-[var(--brand-green)]"
+              id="search2"
+              name="search"
+              onChange={(e) => {
+                onChange(e.target.value);
+              }}
+              value={searchValue}
+              aria-label={`Search ${title}`}
+            />
+            <button type="submit" className="sr-only">
+              Submit
+            </button>
+          </form>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 /*<div className="grid md:grid-cols-2 mx-auto items-center grow custom-container grow">

@@ -11,6 +11,7 @@ import { PrimeReactProvider } from "primereact/api";
 import ResponsiveGridData from "@/components/responsiveGrid";
 import { getTimeAgo } from "@/lib/utils";
 import { ResourcePageStructuredData } from "@/components/schema/ResourcePageStructuredData";
+import ResourcePageHero from "@/components/dataset/individualPage/ResourcePageHero";
 
 const PdfViewer = dynamic(
   () => import("@portaljs/components").then((mod) => mod.PdfViewer),
@@ -81,33 +82,24 @@ export default function ResourcePage({
     <PrimeReactProvider>
       <ResourcePageStructuredData resource={resource} orgName={orgName} dataset={dataset} />
       <Layout>
-        <div className="custom-container pt-[30px]">
-          <Link
-            href={`/@${orgName}/${dataset}`}
-            className="flex items-center  text-sm"
-          >
-            <RiArrowLeftLine className="text-[32px]" />
-            <span className="sr-only">Go back</span>
-          </Link>
-          <div
-            className="bg-cover bg-center bg-no-repeat flex flex-col"
-            style={{}}
-          >
-            <div className={` bg-white`}>
-              <div className="col-span-1">
-                <h1 className="text-[24px] md:text-[50px] font-black lg:max-w-[80%]">
-                  {resource.name}
-                </h1>
+        <ResourcePageHero resource={resource} />
+        <section className="border-b border-[var(--surface-border)] bg-white/90">
+          <div className="custom-container py-4 md:py-5">
+            <Link
+              href={`/@${orgName}/${dataset}`}
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--dark)] transition hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-green)] focus-visible:ring-offset-2"
+            >
+              <RiArrowLeftLine className="text-[24px]" aria-hidden="true" />
+              <span>Back to dataset</span>
+            </Link>
+          </div>
+        </section>
+        <div>
+          <section className="pb-16 pt-6 md:pt-8">
+            <div className="custom-container py-2">
+              <div className="mb-4">
+                <ResourcesBadges resources={[resource]} />
               </div>
-            </div>
-          </div>
-          <div className="mt-4">
-            <ResourcesBadges resources={[resource]} />
-          </div>
-        </div>
-        <div className="">
-          <section className=" pb-16">
-            <div className="py-2 custom-container ">
               <div className="flex flex-col  md:flex-row gap-4 md:items-center py-2">
                 <span className="font-medium text-gray-500 inline">
                   <svg
@@ -185,9 +177,6 @@ export default function ResourcePage({
                     />
                   </svg>
                 </Link>
-              </div>
-              <div className="py-4">
-                <p className="text-stone-500">{resource.description}</p>
               </div>
               <div className="">
                 {resourceFormat == "csv" ? (

@@ -5,8 +5,7 @@ import DatasetSearchForm from "@/components/dataset/search/DatasetSearchForm";
 import DatasetSearchFilters from "@/components/dataset/search/DatasetSearchFilters";
 import ListOfDatasets from "@/components/dataset/search/ListOfDatasets";
 import { searchDatasets } from "@/lib/queries/dataset";
-import HeroSection from "@/components/_shared/HeroSection";
-import { useTheme } from "@/components/theme/theme-provider";
+import SearchPageHero from "@/components/_shared/SearchPageHero";
 import {
   SearchStateProvider,
   useSearchState,
@@ -58,24 +57,14 @@ export default function DatasetSearch({
 
 function SearchPageContent() {
   const { options } = useSearchState();
-  const {
-    theme: { styles },
-  } = useTheme();
 
   return (
     <Layout>
-      <div className="grid grid-rows-searchpage-hero">
-        <HeroSection title="Search" titleAccent={`${options.type}s`} />
-        <section className={`grid row-start-3 row-span-2 col-span-full pt-4 `}>
-          <div
-            className={`custom-container relative rounded-[28px] bg-white p-2 ${styles.shadowMd}`}
-          >
-            <DatasetSearchForm />
-          </div>
-        </section>
-      </div>
-      <div className="custom-container rounded-[28px] bg-white px-6 py-6 shadow-[0_24px_56px_-40px_rgba(17,32,57,0.42)] md:px-8 md:py-8">
-        <article className="grid grid-cols-1 gap-x-6 gap-y-6 xl:gap-x-12 lg:grid-cols-9 pt-[10px] pb-[10px]">
+      <SearchPageHero title="Search" titleAccent={`${options.type}s`}>
+        <DatasetSearchForm />
+      </SearchPageHero>
+      <div className="custom-container">
+        <article className="grid grid-cols-1 gap-x-6 gap-y-6 pb-[10px] pt-6 lg:grid-cols-9 xl:gap-x-12">
           <div className="lg:col-span-3  lg:sticky top-3 h-fit">
             <DatasetSearchFilters />
           </div>

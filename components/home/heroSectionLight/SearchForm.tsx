@@ -33,11 +33,11 @@ const SearchForm: React.FC = () => {
         }}
         placeholder="Search datasets..."
         aria-label="Search datasets"
-        className={`min-h-[58px] w-full rounded-full border border-[var(--surface-border)] bg-white px-5 py-4 leading-none text-[var(--dark)] placeholder:text-[var(--gray)] focus:border-[var(--brand-green)] focus:outline-none ${styles.shadowMd}`}
+        className={`min-h-[56px] w-full rounded-full border border-[var(--surface-border)] bg-white px-5 py-4 leading-none text-[var(--dark)] placeholder:text-[var(--gray)] focus:border-[var(--brand-green)] focus:outline-none focus:ring-2 focus:ring-[rgba(121,193,67,0.16)] ${styles.shadowMd}`}
       />
       <button
         type="submit"
-        className={`inline-flex min-h-[58px] items-center justify-center rounded-full px-6 py-3 text-[13px] font-bold uppercase tracking-[0.22em] md:px-8 ${styles.bgDark} ${styles.textLight}`}
+        className="inline-flex min-h-[56px] items-center justify-center rounded-full px-2 py-3 text-[12px] font-extrabold uppercase tracking-[0.28em] text-white transition hover:text-[var(--brand-green)] sm:px-4"
       >
         <MagnifyingGlassIcon width={24} className="sm:hidden" />
         <span className="hidden sm:block">Search</span>
