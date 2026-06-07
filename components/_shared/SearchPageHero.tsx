@@ -36,7 +36,7 @@ export default function SearchPageHero({
             {titleAccent ? (
               <>
                 {" "}
-                <span className="a11y-ignore-color-contrast text-[var(--brand-aqua)]">{titleAccent}</span>
+                <span className="a11y-ignore-color-contrast text-[var(--dark)]">{titleAccent}</span>
               </>
             ) : null}
           </h1>
