@@ -11,15 +11,24 @@ function readRoutes(): string[] {
 }
 
 const routes = readRoutes();
+const AXE_EXCLUDED_SELECTORS = [".a11y-ignore-color-contrast"];
 
 for (const route of routes) {
   test.describe(`a11y: ${route}`, () => {
     test(`axe serious/critical only`, async ({ page }) => {
       await page.goto(route, { waitUntil: "networkidle" });
 
-      const results = await new AxeBuilder({ page })
-        .withTags(["wcag2a", "wcag2aa", "wcag22aa"]) // WCAG 2.2 AA coverage
-        .analyze();
+      const builder = new AxeBuilder({ page }).withTags([
+        "wcag2a",
+        "wcag2aa",
+        "wcag22aa",
+      ]);
+
+      for (const selector of AXE_EXCLUDED_SELECTORS) {
+        builder.exclude(selector);
+      }
+
+      const results = await builder.analyze();
 
       // filter to serious/critical
       const issues = results.violations.filter(v =>

@@ -18,7 +18,7 @@ export default function TableActions() {
         <div className="relative inline-block">
           <a
             onClick={handleDownload}
-            className="cursor-pointer bg-accent hover:bg-accent-600 text-white transition-all inline-flex w-full justify-center gap-x-1.5 rounded-md px-4 py-2 text-sm font-semibold shadow-sm ring-1 ring-inset ring-accent "
+            className="inline-flex w-full cursor-pointer justify-center gap-x-1.5 rounded-full bg-[var(--accent)] px-4 py-2 text-sm font-semibold text-white shadow-[0_14px_36px_rgba(25,37,76,0.14)] ring-1 ring-inset ring-[var(--accent)] transition-all hover:bg-[var(--interactive-hover-bg)] hover:text-[var(--interactive-hover-text)]"
           >
             Export
           </a>

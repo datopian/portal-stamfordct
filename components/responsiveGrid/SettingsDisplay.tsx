@@ -10,11 +10,11 @@ export function SettingsDisplayButton() {
     <div className="relative inline-block mb-4">
       <button
         onClick={() => toggleSettingsDropdown()}
-        className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+        className="inline-flex w-full justify-center gap-x-1.5 rounded-full border border-[var(--surface-border)] bg-white px-4 py-2 text-sm font-semibold text-[var(--dark)] shadow-[0_14px_36px_rgba(25,37,76,0.08)] transition hover:bg-[var(--surface-muted)]"
         aria-haspopup="true"
         aria-expanded={isSettingsDropdownOpen}
       >
-        <RiSettings2Line className="text-[20px]" />
+        <RiSettings2Line className="text-[20px] text-[var(--accent)]" />
         Settings
       </button>
     </div>
@@ -54,7 +54,7 @@ export function SettingsDisplayPanel() {
 
   useEffect(() => {
     toggleCheckAll(visibleColumns.length === columns.length ? true : false);
-  }, [visibleColumns]);
+  }, [columns.length, visibleColumns]);
 
   const filteredCols = cols.filter((item) =>
     item?.toLocaleLowerCase().includes(columnSearchValue?.toLowerCase())
@@ -63,17 +63,17 @@ export function SettingsDisplayPanel() {
   return (
     isSettingsDropdownOpen && (
       <div
-        className="  text-gray-700 text-sm flex flex-col gap-8"
+        className="flex flex-col gap-8 text-sm text-[var(--gray-dark)]"
         aria-label="Column visibility options"
       >
         <div>
           <div className="px-4 mb-4">
-            <span className="text-gray-600 uppercase text-xs mb-2 block font-bold">
+            <span className="mb-2 block text-xs font-bold uppercase tracking-[0.2em] text-[var(--gray-dark)]">
               Columns ({columns.length})
             </span>
             <div className="mt-2 grid grid-cols-1">
               <input
-                className="col-start-1 row-start-1 block w-full rounded-md bg-white py-1.5 pl-3 pr-10 sm:pr-9 "
+                className="col-start-1 row-start-1 block w-full rounded-xl border border-[var(--surface-border)] bg-white py-2 pl-3 pr-10 text-[var(--dark)] shadow-[0_10px_24px_rgba(25,37,76,0.05)] outline-none transition placeholder:text-[var(--gray)] focus:border-[var(--accent)] sm:pr-9"
                 placeholder="Search columns..."
                 aria-label="Search for columns matching they keywords "
                 value={columnSearchValue}
@@ -111,8 +111,8 @@ export function SettingsDisplayPanel() {
                 tabIndex={0}
                 className={`h-5 w-5 min-w-[1.25rem] flex items-center justify-center rounded border-2 cursor-pointer ${
                   checkAll
-                    ? "bg-accent border-accent text-white"
-                    : "bg-white border-gray-200"
+                    ? "border-[var(--accent)] bg-[var(--accent)] text-white"
+                    : "border-[var(--surface-border)] bg-white"
                 } transition-colors`}
                 onKeyDown={(e) => {
                   if (e.key === " " || e.key === "Enter") {
@@ -125,7 +125,7 @@ export function SettingsDisplayPanel() {
               </label>
               <span
                 onClick={() => handleCheckAll()}
-                className="ml-3  text-gray-900 cursor-pointer flex gap-1 w-full"
+                className="ml-3 flex w-full cursor-pointer gap-1 text-[var(--dark)]"
               >
                 Check All
               </span>
@@ -134,7 +134,7 @@ export function SettingsDisplayPanel() {
 
           <div className="max-h-[320px] overflow-y-auto">
             {filteredCols?.length === 0 && (
-              <div className="italic text-sm px-4">
+              <div className="px-4 text-sm italic text-[var(--gray-dark)]">
                 0 results found matching{" "}
                 <span className="underline">{columnSearchValue}</span>
               </div>
@@ -144,8 +144,8 @@ export function SettingsDisplayPanel() {
               const pinned = pinnedColumns.includes(column);
               return (
                 <div
-                  className={`flex items-center group px-4 py-2 hover:bg-accent-100 ${
-                    pinned ? "bg-accent-100 font-medium" : ""
+                  className={`group flex items-center px-4 py-2 transition hover:bg-[var(--surface-muted)] ${
+                    pinned ? "bg-[var(--accent-light)] font-medium" : ""
                   }`}
                   key={column}
                 >
@@ -167,8 +167,8 @@ export function SettingsDisplayPanel() {
                       tabIndex={0}
                       className={`h-5 w-5 min-w-[1.25rem] flex items-center justify-center rounded border-2 cursor-pointer ${
                         active
-                          ? "bg-accent border-accent text-white"
-                          : "bg-white border-gray-200"
+                          ? "border-[var(--accent)] bg-[var(--accent)] text-white"
+                          : "border-[var(--surface-border)] bg-white"
                       } transition-colors`}
                       onKeyDown={(e) => {
                         if (e.key === " " || e.key === "Enter") {
@@ -181,7 +181,7 @@ export function SettingsDisplayPanel() {
                     </label>
                     <span
                       onClick={() => toggleColumnVisibility(column)}
-                      className="ml-3 text-[#5F5F5F] cursor-pointer flex gap-1 w-full break-all"
+                      className="ml-3 flex w-full cursor-pointer gap-1 break-all text-[var(--gray-dark)]"
                     >
                       {column}
                     </span>
@@ -194,14 +194,14 @@ export function SettingsDisplayPanel() {
         </div>
         <div className="">
           <div className="px-4 ">
-            <span className="text-gray-600 uppercase text-xs mb-2 block font-bold">
+            <span className="mb-2 block text-xs font-bold uppercase tracking-[0.2em] text-[var(--gray-dark)]">
               Pagination
             </span>
           </div>
           <div className="flex justify-between px-4">
             <span>Rows per page</span>
             <select
-              className="p-1 shadow-sm rounded"
+              className="rounded-lg border border-[var(--surface-border)] bg-white px-2 py-1 text-[var(--dark)] shadow-[0_10px_24px_rgba(25,37,76,0.05)] outline-none transition focus:border-[var(--accent)]"
               value={rowsPerPage}
               onChange={(e) => {
                 setRowsPerPage(Number(e.target.value));

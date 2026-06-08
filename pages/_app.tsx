@@ -12,22 +12,10 @@ import Loader from "../components/_shared/Loader";
 import ThemeProvider from "../components/theme/theme-provider";
 import QuerylessAssistant from "../components/queryless/QuerylessAssistant";
 
-import { Inter, Josefin_Sans, Montserrat, Poppins } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-poppins",
-});
-
-const josefin_sans = Josefin_Sans({
-  subsets: ["latin"],
-  weight: [ "200", "400","500","600","700"],
-  variable: "--font-josefin-sans",
-});
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -38,6 +26,12 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter"
 });
+
+const ROOT_FONT_CLASSES = [
+  montserrat.variable,
+  inter.variable,
+  inter.className,
+];
 
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID ?? '';
 
@@ -59,10 +53,20 @@ function MyApp({ Component, pageProps }: AppProps) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.add(...ROOT_FONT_CLASSES);
+
+    return () => {
+      root.classList.remove(...ROOT_FONT_CLASSES);
+    };
+  }, []);
+
   return (
     <div
       id="app-shell"
-      className={cn(poppins.variable, montserrat.variable, inter.variable, josefin_sans.variable, "font-sans")}
+      className={cn(...ROOT_FONT_CLASSES, "font-sans")}
     >
       <ThemeProvider themeName={theme}>
         <DefaultSeo {...SEO} />

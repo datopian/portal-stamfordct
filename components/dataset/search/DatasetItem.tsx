@@ -37,13 +37,13 @@ export default function DatasetItem({
         <div className="text-sm flex gap-2 flex-col md:flex-row md:flex-wrap">
           <div className="flex items-center gap-2 ">
             <RiOrganizationChart className="text-accent" />
-            <span className="text-[var(--gray)]">
+            <span className="text-[var(--gray-dark)]">
               {dataset.organization.title}
             </span>
           </div>
           <div className="flex items-center gap-2 ">
             <RiMapPinTimeLine className="text-accent" />
-            <span className="text-[var(--gray)]">
+            <span className="text-[var(--gray-dark)]">
               {dataset.metadata_modified &&
                 getTimeAgo(dataset.metadata_modified)}
             </span>
@@ -51,7 +51,7 @@ export default function DatasetItem({
           {!!dataset.tags?.length && (
             <div className="flex items-center gap-2 ">
               <RiPriceTagLine className="text-accent" />
-              <span className="line-clamp-1 text-[var(--gray)]">
+              <span className="line-clamp-1 text-[var(--gray-dark)]">
                 {dataset.tags.map((t) => t.display_name).join(", ")}
               </span>
             </div>

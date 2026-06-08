@@ -20,7 +20,7 @@ const LighterThemeFooter: React.FC = () => {
     ],
     useful: [
       { name: "Organizations", href: "/organizations" },
-      { name: "Request data", href: "/request" },
+      { name: "Request data", href: "mailto:request@stamfordct.org?subject=Data%20Request%20from%20Stamford%20Open%20Data%20Portal" },
       { name: "Login", href: "https://cloud.portaljs.com/auth/signin" },
     ],
     getStarted: [
@@ -103,11 +103,11 @@ const LighterThemeFooter: React.FC = () => {
   };
 
   return (
-    <footer className="mt-[120px] border-t-[6px] border-t-[var(--brand-green)] bg-[linear-gradient(180deg,_#203459_0%,_#172744_100%)] text-white">
-      <div className="custom-container mx-auto flex flex-col flex-wrap py-12 md:flex-row md:flex-nowrap md:items-start">
-        <div className="justify-between w-full text-center md:text-left lg:flex">
-          <div className="w-full lg:w-1/3 md:w-1/2">
-            <h2 className="mb-4 mt-4 text-[11px] font-bold uppercase tracking-[0.3em] text-white/65">
+    <footer className="mt-[96px] border-t-[4px] border-t-[var(--brand-green)] bg-[linear-gradient(180deg,_#22305d_0%,_#19254c_58%,_#161f43_100%)] text-white">
+      <div className="custom-container mx-auto py-14">
+        <div className="grid gap-10 text-center md:grid-cols-2 md:text-left xl:grid-cols-5">
+          <div>
+            <h2 className="mb-5 text-[11px] font-bold uppercase tracking-[0.3em] text-white/65">
               About Datopian
             </h2>
             <ul className="space-y-4 text-sm list-none">
@@ -124,8 +124,8 @@ const LighterThemeFooter: React.FC = () => {
             </ul>
           </div>
 
-          <div className="w-full lg:w-1/3 md:w-1/2">
-            <h2 className="mb-4 mt-4 text-[11px] font-bold uppercase tracking-[0.3em] text-white/65">
+          <div>
+            <h2 className="mb-5 text-[11px] font-bold uppercase tracking-[0.3em] text-white/65">
               Useful Links
             </h2>
             <ul className="space-y-4 text-sm list-none">
@@ -142,8 +142,8 @@ const LighterThemeFooter: React.FC = () => {
             </ul>
           </div>
 
-          <div className="w-full lg:w-1/3 md:w-1/2">
-            <h2 className="mb-4 mt-4 text-[11px] font-bold uppercase tracking-[0.3em] text-white/65">
+          <div>
+            <h2 className="mb-5 text-[11px] font-bold uppercase tracking-[0.3em] text-white/65">
               Get Started
             </h2>
             <ul className="space-y-4 text-sm list-none">
@@ -159,25 +159,27 @@ const LighterThemeFooter: React.FC = () => {
               ))}
             </ul>
           </div>
-        </div>
-        <div className="w-full md:w-1/2 flex flex-col justify-between text-center md:text-left">
-          <h2 className="mb-4 mt-4 text-[11px] font-bold uppercase tracking-[0.3em] text-white/65">
-            Stay Up To Date With The News
-          </h2>
-          <div className="flex mt-5 space-x-5 justify-center md:justify-start">
-            {navigation.social.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-white/75 transition hover:text-[var(--brand-green)]"
-              >
-                <span className="sr-only">{item.name}</span>
-                <item.icon className="flex h-6 w-6" aria-hidden={true} />
-              </a>
-            ))}
+
+          <div>
+            <h2 className="mb-5 text-[11px] font-bold uppercase tracking-[0.3em] text-white/65">
+              Stay Up To Date With The News
+            </h2>
+            <div className="flex justify-center gap-5 md:justify-start">
+              {navigation.social.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-white/75 transition hover:text-[var(--brand-green)]"
+                >
+                  <span className="sr-only">{item.name}</span>
+                  <item.icon className="flex h-5 w-5" aria-hidden={true} />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
+
       <div className="custom-container mx-auto flex flex-col flex-wrap items-center border-t border-white/10 py-6 md:flex-row md:flex-nowrap md:items-center">
         <PortalDefaultLogo inverted />
 

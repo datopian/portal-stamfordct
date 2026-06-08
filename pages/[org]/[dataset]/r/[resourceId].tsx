@@ -11,6 +11,7 @@ import { PrimeReactProvider } from "primereact/api";
 import ResponsiveGridData from "@/components/responsiveGrid";
 import { getTimeAgo } from "@/lib/utils";
 import { ResourcePageStructuredData } from "@/components/schema/ResourcePageStructuredData";
+import ResourcePageHero from "@/components/dataset/individualPage/ResourcePageHero";
 
 const PdfViewer = dynamic(
   () => import("@portaljs/components").then((mod) => mod.PdfViewer),
@@ -79,35 +80,23 @@ export default function ResourcePage({
 
   return (
     <PrimeReactProvider>
-      <ResourcePageStructuredData resource={resource} orgName={orgName} dataset={dataset} />
+      <ResourcePageStructuredData resource={resource} orgName={orgName} dataset={dataset as string} />
       <Layout>
-        <div className="custom-container pt-[30px]">
-          <Link
-            href={`/@${orgName}/${dataset}`}
-            className="flex items-center  text-sm"
-          >
-            <RiArrowLeftLine className="text-[32px]" />
-            <span className="sr-only">Go back</span>
-          </Link>
-          <div
-            className="bg-cover bg-center bg-no-repeat flex flex-col"
-            style={{}}
-          >
-            <div className={` bg-white`}>
-              <div className="col-span-1">
-                <h1 className="text-[24px] md:text-[50px] font-black lg:max-w-[80%]">
-                  {resource.name}
-                </h1>
-              </div>
-            </div>
+        <ResourcePageHero resource={resource} />
+        <section className="border-b border-[var(--surface-border)] bg-white/90">
+          <div className="custom-container py-4 md:py-5">
+            <Link
+              href={`/@${orgName}/${dataset}`}
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--dark)] transition hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-green)] focus-visible:ring-offset-2"
+            >
+              <RiArrowLeftLine className="text-[24px]" aria-hidden="true" />
+              <span>Back to dataset</span>
+            </Link>
           </div>
-          <div className="mt-4">
-            <ResourcesBadges resources={[resource]} />
-          </div>
-        </div>
-        <div className="">
-          <section className=" pb-16">
-            <div className="py-2 custom-container ">
+        </section>
+        <div>
+          <section className="pb-16 pt-6 md:pt-8">
+            <div className="custom-container py-2">
               <div className="flex flex-col  md:flex-row gap-4 md:items-center py-2">
                 <span className="font-medium text-gray-500 inline">
                   <svg
@@ -167,7 +156,7 @@ export default function ResourcePage({
               <div className=" py-4">
                 <Link
                   href={resource.url}
-                  className="bg-accent h-auto py-2 px-4 text-sm text-white rounded-xl font-roboto font-bold hover:bg-darkaccent hover:text-white duration-150 flex items-center gap-1 w-fit"
+                  className="inline-flex min-h-[48px] w-fit items-center gap-2 rounded-full bg-[var(--dark)] px-5 py-3 text-sm font-bold text-white shadow-[0_14px_36px_rgba(25,37,76,0.14)] transition hover:bg-[var(--interactive-hover-bg)] hover:text-[var(--interactive-hover-text)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-green)] focus-visible:ring-offset-2"
                 >
                   Download
                   <svg
@@ -176,7 +165,7 @@ export default function ResourcePage({
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="w-6 h-6"
+                    className="h-5 w-5"
                   >
                     <path
                       strokeLinecap="round"
@@ -185,9 +174,6 @@ export default function ResourcePage({
                     />
                   </svg>
                 </Link>
-              </div>
-              <div className="py-4">
-                <p className="text-stone-500">{resource.description}</p>
               </div>
               <div className="">
                 {resourceFormat == "csv" ? (

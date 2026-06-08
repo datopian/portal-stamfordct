@@ -1,32 +1,37 @@
 import Link from "next/link";
+import { IconType } from "react-icons";
 
 export function Stat({
   Icon,
-  label,
   href,
   count,
+  label,
+  className = "",
 }: {
-  Icon: React.FC<{ className?: string; width?: number }>;
-  label: string;
+  Icon: IconType;
   href: string;
   count: number;
+  label: string;
+  className?: string;
 }) {
   return (
     <Link
       href={href}
-      className="group flex min-h-[148px] min-w-[148px] flex-1 flex-col items-center justify-center rounded-full border border-[var(--surface-border)] bg-white px-4 text-center transition hover:-translate-y-1 hover:border-[var(--brand-green)] hover:text-[var(--dark)] hover:shadow-[0_20px_48px_-32px_rgba(17,32,57,0.5)]"
+      className={`flex items-center justify-center rounded-[24px] border border-[var(--surface-border)] bg-white px-6 py-8 text-center shadow-[0_24px_56px_-42px_rgba(16,32,68,0.28)] transition hover:-translate-y-1 hover:shadow-[0_28px_60px_-40px_rgba(16,32,68,0.35)] md:px-8 md:py-10 ${className}`}
     >
-      <span className="mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-[var(--surface-muted)] text-[var(--accent)] transition group-hover:bg-[var(--accent-light)] group-hover:text-[var(--brand-green)]">
-        <Icon className="text-[32px]" width={32} />
-      </span>
-      <div className="flex flex-col gap-0">
-        <span className="font-montserrat text-[30px] font-black leading-none text-[var(--dark)]">
+      <div className="flex w-full flex-col gap-3 items-center justify-center">
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-[rgba(16,32,68,0.05)] bg-[rgba(16,32,68,0.04)]">
+          <Icon className="text-[28px] text-[var(--dark)]" aria-hidden={true} />
+        </div>
+
+        <div className="font-montserrat text-[38px] font-black leading-none text-[var(--dark)] md:text-[44px]">
           {count}
-        </span>
-        <span className="mt-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--gray-dark)]">
+        </div>
+
+        <div className="text-[12px] font-extrabold uppercase leading-none tracking-[0.24em] text-[var(--dark)]">
           {label}
-          {count > 1 ? "s" : ""}
-        </span>
+          {count !== 1 ? "s" : ""}
+        </div>
       </div>
     </Link>
   );

@@ -31,7 +31,7 @@ export default function DatasetSearchFilters() {
     <div className="flex flex-col ">
       <a
         href="#"
-        className="text-xs flex items-center gap-1 lg:hidden  mb-4"
+        className="mb-4 flex items-center gap-1 text-xs font-semibold text-[var(--accent)] lg:hidden"
         onClick={() => setShowFilters(!showFilters)}
       >
         {showFilters ? "Hide" : "Show"} Filters
@@ -43,7 +43,7 @@ export default function DatasetSearchFilters() {
       </a>
       <div className={` ${showFilters ? "block" : "hidden"} lg:block`}>
         <FacetCard title="Type">
-          <div className="text-[#5F5F5F] space-y-[10px]">
+          <div className="space-y-[10px] text-[var(--gray-dark)]">
             <DatasetTypeOption
               title="Datasets"
               Icon={CircleStackIcon}
@@ -97,7 +97,7 @@ export default function DatasetSearchFilters() {
               <button
                 onClick={() => setSeeMoreOrgs(!seeMoreOrgs)}
                 type="button"
-                className="bg-[var(--dark)] hover:bg-black text-white py-[10px] px-[12px] rounded-[4px] mt-2 transition font-[600] text-[12px] leading-[15px]"
+                className="mt-2 rounded-full bg-[var(--accent)] px-4 py-[10px] text-[12px] font-semibold leading-[15px] text-white transition hover:bg-[var(--interactive-hover-bg)] hover:text-[var(--interactive-hover-text)]"
               >
                 See {seeMoreOrgs ? "Less" : "More"}
               </button>
@@ -144,7 +144,7 @@ export default function DatasetSearchFilters() {
                 <button
                   onClick={() => setSeeMoreGroups(!seeMoreGroups)}
                   type="button"
-                  className="bg-[var(--dark)] hover:bg-black text-white py-[10px] px-[12px] rounded-[4px] mt-2 transition font-[600] text-[12px] leading-[15px]"
+                  className="mt-2 rounded-full bg-[var(--accent)] px-4 py-[10px] text-[12px] font-semibold leading-[15px] text-white transition hover:bg-[var(--interactive-hover-bg)] hover:text-[var(--interactive-hover-text)]"
                 >
                   See {seeMoreGroups ? "Less" : "More"}
                 </button>
@@ -269,7 +269,7 @@ function DatasetTypeOption({
         {title}
       </div>
       {!!count && (
-        <span className="ml-auto w-[24px] h-[24px] inline-flex items-center justify-center rounded-full bg-gray-50 px-1.5 py-0.5 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+        <span className="ml-auto inline-flex h-[24px] w-[24px] items-center justify-center rounded-full bg-[var(--surface-muted)] px-1.5 py-0.5 text-xs font-medium text-[var(--gray-dark)] ring-1 ring-inset ring-[var(--surface-border)]">
           {count}
         </span>
       )}

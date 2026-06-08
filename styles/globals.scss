@@ -3,13 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --light-gray: #f8fafc;
-  --light-gray-2: #d7dee8;
-  --mid-blue: #253b63;
-  --accent: #253b63;
-  --brand-green: #7db640;
+  --light-gray: #edf5f4;
+  --light-gray-2: #cfdbe0;
+  --mid-blue: #39426d;
+  --accent: #39426d;
+  --brand-green: #8ad61d;
+  --brand-green-text: #4f7a19;
+  --brand-aqua: #72cacc;
+  --brand-aqua-soft: #dff4f3;
+  --brand-stone: #b8c0c7;
+  --brand-slate: #4b5075;
+  --brand-navy: #19254c;
+  --badge-bg: rgba(184, 192, 199, 0.18);
+  --badge-bg-strong: rgba(184, 192, 199, 0.24);
+  --badge-border: rgba(184, 192, 199, 0.52);
+  --badge-text: #4b5075;
+  --interactive-hover-bg: #8ad61d;
+  --interactive-hover-text: #19254c;
   --indicator-size: 3px;
-  --text-active-color: #172744;
+  --text-active-color: #19254c;
   --queryless-drawer-width: 560px;
 }
 
@@ -26,8 +38,10 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background: linear-gradient(180deg, #f8fafc 0%, #eef2f6 100%);
-  color: #1f365b;
+  background:
+    radial-gradient(circle at top right, rgba(114, 202, 204, 0.14) 0%, rgba(114, 202, 204, 0) 30%),
+    linear-gradient(180deg, #ffffff 0%, #edf5f4 62%, #e7f1f1 100%);
+  color: #19254c;
   font-family:
     var(--font-inter),
     -apple-system,
@@ -59,8 +73,8 @@ textarea {
 }
 
 ::selection {
-  background: rgba(125, 182, 64, 0.2);
-  color: #172744;
+  background: rgba(138, 214, 29, 0.22);
+  color: #19254c;
 }
 
 .custom-container {

@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useCallback } from "react";
+import React, { FC, ReactNode, useCallback, useEffect } from "react";
 import styles from "./styles.module.scss";
 import Particles from "react-particles";
 import { loadSlim } from "tsparticles-slim";
@@ -20,6 +20,19 @@ const LigtherTheme = ({
 
   const particlesLoaded = useCallback(async (container) => {
     // await console.log(container);
+  }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const body = document.body;
+
+    root.classList.add(styles.LightTheme);
+    body.classList.add(styles.LightTheme);
+
+    return () => {
+      root.classList.remove(styles.LightTheme);
+      body.classList.remove(styles.LightTheme);
+    };
   }, []);
 
   return (

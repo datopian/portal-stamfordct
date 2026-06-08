@@ -39,7 +39,7 @@ function ListItems() {
                 const value = e.target.value;
                 setOptions({ sort: value });
               }}
-              className="rounded-full border border-[var(--surface-border)] bg-white px-4 py-2 text-[13px] font-bold uppercase tracking-[0.08em] text-[var(--dark)] outline-0 focus:border-[var(--brand-green)]"
+              className="rounded-full border border-[var(--surface-border)] bg-white px-4 py-2 text-[13px] font-semibold text-[var(--dark)] outline-0 focus:border-[var(--brand-green)]"
             >
               <option value="score desc">Most relevant</option>
               <option value="title_string asc">Name ascending</option>
@@ -103,8 +103,8 @@ function FilterBadges() {
   return (
     <div className="border-b border-[var(--surface-border)] pb-3">
       {!!activeFiltersCount && (
-        <span className="mb-2 inline-block text-xs font-bold uppercase tracking-[0.16em] text-[var(--gray-dark)]">
-          Applied Filters{" "}
+        <span className="mb-2 inline-block text-xs font-semibold text-[var(--gray-dark)]">
+          Applied filters{" "}
           <span className="font-[600]">
             ({activeFiltersCount}
             ):
@@ -177,7 +177,7 @@ function FilterBadges() {
                 tags: [],
               });
             }}
-            className="ml-auto inline-flex h-fit w-fit cursor-pointer items-center gap-x-0.5 rounded-full bg-[var(--dark)] px-3 py-1.5 text-xs font-medium uppercase tracking-[0.08em] text-white ring-1 ring-inset ring-black/10"
+            className="ml-auto inline-flex h-fit w-fit cursor-pointer items-center gap-x-0.5 rounded-full bg-[var(--dark)] px-3 py-1.5 text-xs font-medium text-white ring-1 ring-inset ring-black/10 transition hover:bg-[var(--interactive-hover-bg)] hover:text-[var(--interactive-hover-text)]"
           >
             clear all
             <button
@@ -244,7 +244,7 @@ function ResultsNotFound() {
       </div>
       <div
         onClick={clearFilters}
-        className="flex h-[46px] w-fit cursor-pointer items-center justify-center rounded-full bg-[var(--accent)] px-6 transition hover:bg-[var(--accent-dark)]"
+        className="flex h-[46px] w-fit cursor-pointer items-center justify-center rounded-full bg-[var(--accent)] px-6 transition hover:bg-[var(--interactive-hover-bg)] hover:text-[var(--interactive-hover-text)]"
       >
         <span className="text-[13px] font-bold uppercase tracking-[0.14em] text-white">
           Clear filters
@@ -266,7 +266,7 @@ function ActiveFilter({
       onClick={() => {
         onClick();
       }}
-      className="inline-flex cursor-pointer items-center gap-x-0.5 rounded-full bg-[var(--surface-muted)] px-3 py-1.5 text-xs font-medium uppercase tracking-[0.06em] text-[var(--gray-dark)] ring-1 ring-inset ring-[var(--surface-border)]"
+      className="inline-flex cursor-pointer items-center gap-x-0.5 rounded-full border border-[var(--badge-border)] bg-[var(--badge-bg)] px-3 py-1.5 text-xs font-medium text-[var(--badge-text)]"
     >
       {label}
       <button
